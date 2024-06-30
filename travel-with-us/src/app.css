@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Kaisei+Decol:wght@400;500;700&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Kaisei Decol", serif;
+}
+
+
+/* COLOURS AND STYLING */
+:root{
+    --PrimaryColour: #2C476E;
+    --SecondaryColour: #132C46;
+    --gradientColour: linear-gradient(to right #2C476E, #132C46);
+    --whiteColour: hsl(0, 0%, 100%);
+    --blackColour: #000000;
+    --textColour: hsl(24, 4%, 36%);
+    --whiteColourDeam: hsl(0, 0%, 93%);
+    --greyText: #9F9F9F;
+    --inputColour: rgb(239, 239, 239);
+    --bodyColour: rgb(240, 240, 246);
+    --cardBG: rgb(225, 225, 225);
+}
+
+a{
+    text-decoration: none;
+}
+
+li{
+    list-style: none;
+}
+
+.section{
+    padding: 4rem 0 2rem;
+}
+
+.container{
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+}
+
+.icon{
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+.flex{
+    display: flex;
+    align-items: center;
+}
+
+.grid{
+    display: grid;
+    align-items: center;
+}
+
+.btn{
+    padding: .6rem 1.5rem;
+    background: black;
+    border-radius: .5rem;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.btn a{
+    color: var(--whiteColour);
+    font-weight: 500;
+}
+
+.btn:hover{
+    background: var(--SecondaryColour);
+}
+
+img, video{
+    width: 100%;
+    height: auto;
+}
+
+input{
+    font-size: 100%;
+}
+
+body{
+    background: var(--bodyColour);
+}
