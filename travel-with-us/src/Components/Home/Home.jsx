@@ -1,78 +1,86 @@
-import React from 'react'
-import './home.css'
-import heroImage from '../../Assets/hero.png';
-import {GrLocation} from 'react-icons/gr'
-import {HiFilter} from 'react-icons/hi'
-import {FiFacebook} from 'react-icons/fi'
-import {AiOutlineInstagram} from 'react-icons/ai'
-import {SiTripadvisor} from 'react-icons/si'
-import {BsListTask} from 'react-icons/bs'
-import {TbApps} from 'react-icons/tb'
+    import React, {useEffect} from 'react'
+    import './home.css'
+    import heroImage from '../../Assets/hero.png';
+    import {GrLocation} from 'react-icons/gr'
+    import {HiFilter} from 'react-icons/hi'
+    import {FiFacebook} from 'react-icons/fi'
+    import {AiOutlineInstagram} from 'react-icons/ai'
+    import {SiTripadvisor} from 'react-icons/si'
+    import {BsListTask} from 'react-icons/bs'
+    import {TbApps} from 'react-icons/tb'
+
+    import Aos from 'aos'
+    import 'aos/dist/aos.css'
 
 
-const Home = () => {
-    return (
-        <section className='home'>
-            <div className="overlay"></div>
-            <img src={heroImage} alt="Hero Image" className="hero-image" />
+    const Home = () => {
+        //scroll animation
+        useEffect(()=> {
+            Aos.init({duration: 1500})
+        }, [])
 
-            <div className="homeContent container">
-                <div className="textDiv">
+        return (
+            <section className='home'>
+                <div className="overlay"></div>
+                <img src={heroImage} alt="Hero Image" className="hero-image" />
 
-                    <h1 className="homeTitle">
-                    Travel Smarter, Travel With Us
-                    </h1>
+                <div className="homeContent container">
+                    <div className="textDiv">
 
+                        <h1 data-aos="fade-up" className="homeTitle">
+                        Travel Smarter, Travel With Us
+                        </h1>
+
+                    </div>
+
+                    <div data-aos="fade-up" className="cardDiv grid">
+                        <div className="destinationInput">
+                            <label htmlFor="city">Search your destination:</label>
+                            <div className="input flex">
+                                <input type="text" placeholder='Where to?'/>
+                                <GrLocation className="icon"/>
+                            </div>
+                        </div>
+
+                        <div className="dateInput">
+                            <label htmlFor="date">Select your date:</label>
+                            <div className="input flex">
+                                <input type="date"/>
+                            </div>
+                        </div>
+
+                        <div className="priceInput">
+                            <div className="label_total flex">
+                                <label htmlFor="price">Max price:</label>
+                                <h3 className="total">$5000</h3>
+                            </div>
+                            <div className="input flex">
+                                <input type="range" max="5000" min="1000"/>
+                            </div>
+                        </div>
+
+                        <div className="searchOptions flex">
+                            <HiFilter className="icon"/>
+                            <span>MORE FILTERS</span>
+                        </div>
+                    </div>
+
+                    <div data-aos="fade-up" className="homeFooterIcons flex">
+                        <div className="rightIcons">
+                            <FiFacebook className="icon"/>
+                            <AiOutlineInstagram className="icon"/>
+                            <SiTripadvisor className="icon"/>
+                        </div>
+
+                        <div className="leftIcons">
+                            <BsListTask className="icon"/>
+                            <TbApps className="icon"/>
+                        </div>
+                    </div>
                 </div>
 
-                <div className="cardDiv grid">
-                    <div className="destinationInput">
-                        <label htmlFor="city">Search your destination:</label>
-                        <div className="input flex">
-                            <input type="text" placeholder='text'/>
-                            <GrLocation className="icon"/>
-                        </div>
-                    </div>
+            </section>
+        )
+    }
 
-                    <div className="dateInput">
-                        <label htmlFor="date">Select your date:</label>
-                        <div className="input flex">
-                            <input type="date"/>
-                        </div>
-                    </div>
-
-                    <div className="priceInput">
-                        <div className="label_total flex">
-                            <label htmlFor="price">Max price:</label>
-                            <h3 className="total">$5000</h3>
-                        </div>
-                        <div className="input flex">
-                            <input type="range" max="5000" min="1000"/>
-                        </div>
-                    </div>
-
-                    <div className="searchOptions flex">
-                        <HiFilter className="icon"/>
-                        <span>MORE FILTERS</span>
-                    </div>
-                </div>
-
-                <div className="homeFooterIcons flex">
-                    <div className="rightIcons">
-                        <FiFacebook className="icon"/>
-                        <AiOutlineInstagram className="icon"/>
-                        <SiTripadvisor className="icon"/>
-                    </div>
-
-                    <div className="leftIcons">
-                        <BsListTask className="icon"/>
-                        <TbApps className="icon"/>
-                    </div>
-                </div>
-            </div>
-
-        </section>
-    )
-}
-
-export default Home
+    export default Home

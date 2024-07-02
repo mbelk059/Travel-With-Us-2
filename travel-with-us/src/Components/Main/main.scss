@@ -1,0 +1,98 @@
+// Root variables
+:root {
+    --PrimaryColour: #2C476E;
+    --SecondaryColour: #132C46;
+    --gradientColour: linear-gradient(to right, #2C476E, #132C46);
+    --whiteColour: hsl(0, 0%, 100%);
+    --blackColour: #000000;
+    --textColour: hsl(24, 4%, 36%);
+    --whiteColourDeam: hsl(0, 0%, 93%);
+    --greyText: #9F9F9F;
+    --inputColour: rgb(239, 239, 239);
+    --bodyColour: rgb(240, 240, 246);
+    --cardBG: rgb(225, 225, 225);
+}
+
+// Main section styles
+.main {
+    padding: 2rem 1rem 0; /* Adjusted padding to reduce top gap */
+}
+
+.secTitle .title {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+.infoSection {
+    margin-top: -6rem; /* Adjusted margin top to reduce gap */
+    text-align: center;
+}
+
+.infoHeader {
+    font-size: 1.6rem; /* Adjusted font size */
+    margin-bottom: 2rem;
+    color: var(--PrimaryColour); /* Set primary color */
+}
+
+.infoContent {
+    display: flex;
+    flex-direction: column;
+    gap: 0rem; /* Adjusted gap between points */
+}
+
+.infoItem {
+    text-align: left;
+}
+
+.infoItem h3 {
+    font-size: 1rem; /* Adjusted font size */
+    margin-bottom: 0.5rem;
+    color: var(--blackColour); /* Set primary color */
+}
+
+.infoItem p {
+    font-size: 0.85rem; /* Adjusted font size */
+    color: var(--textColour); /* Use text color variable */
+}
+
+@media screen and (min-width: 768px) {
+    .infoContent {
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    .infoItem {
+        width: 30%;
+    }
+}
+
+.destinationSection {
+    margin-top: 2.6rem;
+}
+
+.sectionTitle {
+    margin-top: 2rem;
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+}
+
+.countryGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+    justify-content: center;
+}
+
+.countryItem img {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.countryItem p {
+    margin-top: 0.1rem;
+    font-size: 0.9rem;
+    color: var(--blackColour);
+    font-weight: 500;
+}

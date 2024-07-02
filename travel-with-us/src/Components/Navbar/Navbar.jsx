@@ -17,11 +17,11 @@ const Navbar = () => {
     }
 
     return (
-        <section className='navBarSection'>
+        <section className="navBarSection">
             <header className="header flex">
 
                 <div className="logoDiv">
-                    <a href="#" className="logo">
+                    <a href="#" className="logo flex">
                         <h1><MdOutlineTravelExplore className="icon"/>Travel With Us</h1>
                     </a>
                 </div>
