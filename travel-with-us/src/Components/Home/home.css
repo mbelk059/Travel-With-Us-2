@@ -1,7 +1,7 @@
 :root {
   --PrimaryColour: #2C476E;
   --SecondaryColour: #132C46;
-  --gradientColour: linear-gradient(to right #2C476E, #132C46);
+  --gradientColour: linear-gradient(to right, #2C476E, #132C46);
   --whiteColour: hsl(0, 0%, 100%);
   --blackColour: #000000;
   --textColour: hsl(24, 4%, 36%);
@@ -105,7 +105,7 @@
   color: var(--PrimaryColour);
   margin-left: 10px;
 }
-.home .homeContent .cardDiv .input .input[type=range] {
+.home .homeContent .cardDiv .input input[type=range] {
   background: blue;
 }
 .home .homeContent .cardDiv .searchOptions {
@@ -121,6 +121,7 @@
   left: 50%;
   transform: translate(-50%);
   justify-content: center;
+  cursor: pointer;
 }
 .home .homeContent .cardDiv .searchOptions:hover {
   background: var(--SecondaryColour);
@@ -130,6 +131,42 @@
 }
 .home .homeContent .cardDiv .searchOptions span {
   font-size: 13px;
+}
+.home .homeContent .cardDiv.expanded .additionalFilter1,
+.home .homeContent .cardDiv.expanded .additionalFilter2,
+.home .homeContent .cardDiv.expanded .searchButton {
+  display: block;
+}
+.home .homeContent .cardDiv .additionalFilter1,
+.home .homeContent .cardDiv .additionalFilter2,
+.home .homeContent .cardDiv .searchButton {
+  display: none;
+  margin-top: 1rem;
+}
+.home .homeContent .cardDiv .additionalFilter1 .input,
+.home .homeContent .cardDiv .additionalFilter2 .input,
+.home .homeContent .cardDiv .searchButton .input {
+  height: auto;
+  padding: 0;
+  background: none;
+}
+.home .homeContent .cardDiv .additionalFilter1 .input input,
+.home .homeContent .cardDiv .additionalFilter2 .input input,
+.home .homeContent .cardDiv .searchButton .input input {
+  background: var(--inputColour);
+  border-radius: 3rem;
+  padding: 0.5rem 1rem;
+}
+.home .homeContent .cardDiv .searchButton {
+  background: var(--PrimaryColour);
+  color: var(--whiteColour);
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 3rem;
+  cursor: pointer;
+}
+.home .homeContent .cardDiv .searchButton:hover {
+  background: var(--SecondaryColour);
 }
 .home .homeContent .homeFooterIcons {
   width: 100%;

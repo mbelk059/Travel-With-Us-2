@@ -1,7 +1,7 @@
-:root{
+:root {
     --PrimaryColour: #2C476E;
     --SecondaryColour: #132C46;
-    --gradientColour: linear-gradient(to right #2C476E, #132C46);
+    --gradientColour: linear-gradient(to right, #2C476E, #132C46);
     --whiteColour: hsl(0, 0%, 100%);
     --blackColour: #000000;
     --textColour: hsl(24, 4%, 36%);
@@ -10,10 +10,9 @@
     --inputColour: rgb(239, 239, 239);
     --bodyColour: rgb(240, 240, 246);
     --cardBG: rgb(225, 225, 225);
-}
-
-
-.home{
+  }
+  
+  .home {
     width: 100%;
     height: 10vh;
     position: relative;
@@ -21,168 +20,204 @@
     align-items: center;
     justify-content: center;
     margin: auto;
-
-    img{
-        position: absolute;
-        height: 85vh;
-        width: 100%;
-        top: 0;
-        bottom: 0;
-        object-fit: cover;
+  
+    img {
+      position: absolute;
+      height: 85vh;
+      width: 100%;
+      top: 0;
+      bottom: 0;
+      object-fit: cover;
     }
-
-    .homeContent{
-        width: 100%;
-        height: max-content;
-        padding: 7rem 1.5rem 3rem;
+  
+    .homeContent {
+      width: 100%;
+      height: max-content;
+      padding: 7rem 1.5rem 3rem;
+      display: flex;
+      row-gap: 1rem;
+      flex-direction: column;
+      align-items: stretch;
+      justify-content: center;
+      margin: auto;
+      color: var(--whiteColour);
+      z-index: 100;
+  
+      .textDiv {
+        padding: 0rem 0;
         display: flex;
-        row-gap: 1rem;
-        flex-direction: column;
-        align-items: stretch;
         justify-content: center;
-        margin: auto;
-        color: var(--whiteColour);
-        z-index: 100;
-
-        .textDiv{
-            padding: 0rem 0;
-            display: flex;
-            justify-content: center;
-
-            .smallText{
-                font-size: 13px;
-                text-transform: uppercase;
-            }
-
-            .homeTitle{
-                position: relative;
-                font-size: 1.8rem;
-            }
+  
+        .smallText {
+          font-size: 13px;
+          text-transform: uppercase;
         }
-
-        .cardDiv{
-            position: relative;
-            padding: 1rem 1rem;
-            background: var(--whiteColour);
-            border-radius: 10px;
-            gap: 1rem;
-
-            label{
-                display: block;
-                color: black;
-                padding-bottom: 10px;
-                font-size: 13px;
-                font-weight: 500;
-            }
-
-            .label_total{
-                justify-content: space-between;
-                align-items: center;
-
-                .total{
-                    color: black;
-                    font-size: 18px;
-                    padding-bottom: 10px;
-                }
-            }
-
-            .input{
-                height: 40px;
-                padding: 0 1rem;
-                background: var(--inputColour);
-                border-radius: 3rem;
-
-                input{
-                    background: none;
-                    border: none;
-                    outline: none;
-                    width: 100%;
-                    font-size: 13px;
-                    font-weight: 500;
-                    &::placeholder{
-                        font-size: 13px;
-                    }
-                }
-
-                .icon{
-                    font-size: 18px;
-                    color: var(--PrimaryColour);
-                    margin-left: 10px;
-                }
-
-                .input[type=range]{
-                    background: blue;
-
-                }
-            }
-
-
-            .searchOptions{
-                position: absolute;
-                background: var(--PrimaryColour);
-                width: max-content;
-                bottom: -0.7rem;
-                column-gap: .8rem;
-                padding: 5px 1rem;
-                border-radius: 3rem;
-                left: 50%;
-                transform: translate(-50%);
-                justify-content: center;
-
-                &:hover{
-                    background: var(--SecondaryColour);
-                }
-
-                .icon{
-                    font-size: 18px;
-                }
-
-                span{
-                    font-size: 13px;
-                }
-
-            }
+  
+        .homeTitle {
+          position: relative;
+          font-size: 1.8rem;
         }
-
-        .homeFooterIcons{
+      }
+  
+      .cardDiv {
+        position: relative;
+        padding: 1rem 1rem;
+        background: var(--whiteColour);
+        border-radius: 10px;
+        gap: 1rem;
+  
+        label {
+          display: block;
+          color: black;
+          padding-bottom: 10px;
+          font-size: 13px;
+          font-weight: 500;
+        }
+  
+        .label_total {
+          justify-content: space-between;
+          align-items: center;
+  
+          .total {
+            color: black;
+            font-size: 18px;
+            padding-bottom: 10px;
+          }
+        }
+  
+        .input {
+          height: 40px;
+          padding: 0 1rem;
+          background: var(--inputColour);
+          border-radius: 3rem;
+  
+          input {
+            background: none;
+            border: none;
+            outline: none;
             width: 100%;
-            justify-content: space-between;
-
-            .icon{
-                font-size: 20px;
-                margin: 0 10px;
-                color: var(--whiteColour);
-                font-weight: 600;
-                
-                &:hover{
-                    color: var(--PrimaryColour);
-                }
+            font-size: 13px;
+            font-weight: 500;
+            &::placeholder {
+              font-size: 13px;
             }
+          }
+  
+          .icon {
+            font-size: 18px;
+            color: var(--PrimaryColour);
+            margin-left: 10px;
+          }
+  
+          input[type='range'] {
+            background: blue;
+          }
         }
-
+  
+        .searchOptions {
+          position: absolute;
+          background: var(--PrimaryColour);
+          width: max-content;
+          bottom: -0.7rem;
+          column-gap: 0.8rem;
+          padding: 5px 1rem;
+          border-radius: 3rem;
+          left: 50%;
+          transform: translate(-50%);
+          justify-content: center;
+          cursor: pointer;
+  
+          &:hover {
+            background: var(--SecondaryColour);
+          }
+  
+          .icon {
+            font-size: 18px;
+          }
+  
+          span {
+            font-size: 13px;
+          }
+        }
+  
+        &.expanded {
+          .additionalFilter1,
+          .additionalFilter2,
+          .searchButton {
+            display: block;
+          }
+        }
+  
+        .additionalFilter1,
+        .additionalFilter2,
+        .searchButton {
+          display: none;
+          margin-top: 1rem;
+  
+          .input {
+            height: auto;
+            padding: 0;
+            background: none;
+  
+            input {
+              background: var(--inputColour);
+              border-radius: 3rem;
+              padding: 0.5rem 1rem;
+            }
+          }
+        }
+  
+        .searchButton {
+          background: var(--PrimaryColour);
+          color: var(--whiteColour);
+          padding: 0.5rem 1rem;
+          border: none;
+          border-radius: 3rem;
+          cursor: pointer;
+  
+          &:hover {
+            background: var(--SecondaryColour);
+          }
+        }
+      }
+  
+      .homeFooterIcons {
+        width: 100%;
+        justify-content: space-between;
+  
+        .icon {
+          font-size: 20px;
+          margin: 0 10px;
+          color: var(--whiteColour);
+          font-weight: 600;
+  
+          &:hover {
+            color: var(--PrimaryColour);
+          }
+        }
+      }
     }
-
-}
-
-// MEDIA QUERIES ===================>
-@media screen and (min-width: 500px) {
-    .home{
-        .homeContent{
-            .textDiv{
-                .smallText{
-                    font-size: 16px;
-                }
-
-                .homeTitle{
-                    position: relative;
-                    font-size: 2.3rem;
-                    width: max-content;
-
-                    &::after{
-                        position: absolute;
-                        content: '';
-                        background: var(--SecondaryColour);
-                        height: 5px;
+  }
+  
+  // MEDIA QUERIES ===================>
+  @media screen and (min-width: 500px) {
+    .home {
+      .homeContent {
+        .textDiv {
+          .smallText {
+            font-size: 16px;
+          }
+  
+          .homeTitle {
+            position: relative;
+            font-size: 2.3rem;
+            width: max-content;
+  
+            &::after {
+              position: absolute;
+              content: '';
+              background: var(--SecondaryColour);
+              height: 5px;
                         width: 145px;
                         right: 0px;
                         bottom: 5px;
