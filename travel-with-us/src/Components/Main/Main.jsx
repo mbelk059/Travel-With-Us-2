@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import './main.css'
+import { useNavigate } from 'react-router-dom';
+import './main.css';
 
 import chinaImage from '../../Assets/china.png';
 import algeriaImage from '../../Assets/algeria.png';
@@ -19,15 +20,10 @@ import uaeImage from '../../Assets/uae.png';
 
 import { FaCalendarAlt, FaStar, FaDollarSign, FaHeart } from 'react-icons/fa';
 
-import Aos from 'aos'
-import 'aos/dist/aos.css'
-
 const Main = () => {
-
-    // State to track liked countries
+    const navigate = useNavigate();
     const [likedCountries, setLikedCountries] = useState([]);
 
-    // Function to handle like/unlike
     const handleLikeToggle = (country) => {
         if (likedCountries.includes(country)) {
             setLikedCountries(likedCountries.filter((c) => c !== country));
@@ -36,14 +32,15 @@ const Main = () => {
         }
     };
 
-    return (
-        <section className='main container section'>
+    const handleImageClick = (country) => {
+        navigate(`/${country.toLowerCase()}`); // Navigate to the country route dynamically
+    };
 
+    return (
+        <section id="discover" className='main container section'>
             <div className="infoSection">
-                <h2 className="infoHeader">
-                    Plan, Book, Travel—It's That Simple
-                </h2>
-                <div data-aos="fade-up" className="infoContent">
+                <h2 className="infoHeader">Plan, Book, Travel—It's That Simple</h2>
+                <div className="infoContent" data-aos="fade-up">
                     <div className="infoItem">
                         <FaCalendarAlt className="infoIcon" />
                         <h3>Flexible Plans</h3>
@@ -65,46 +62,69 @@ const Main = () => {
             <div className="destinationSection">
                 <h2 className="sectionTitle">Explore trending destinations</h2>
                 <div className="countryGrid">
-                    <div className="countryItem">
+                    <div className="countryItem" onClick={() => handleImageClick('China')}>
                         <div className="countryImageContainer">
-                                <img src={chinaImage} alt="China" />
-                                <FaHeart
-                                    className={`heartIcon ${likedCountries.includes('China') ? 'liked' : ''}`}
-                                    onClick={() => handleLikeToggle('China')}
-                                />
-                            </div>
-                            <p>China</p>
+                            <img src={chinaImage} alt="China" />
+                            <FaHeart
+                                className={`heartIcon ${likedCountries.includes('China') ? 'liked' : ''}`}
+                                onClick={(e) => {
+                                    e.stopPropagation();
+                                    handleLikeToggle('China');
+                                }}
+                            />
+                        </div>
+                        <p>China</p>
                     </div>
-                    <div className="countryItem">
-                        <img src={japanImage} alt="Japan" />
+                    <div className="countryItem" onClick={() => handleImageClick('Japan')}>
+                        <div className="countryImageContainer">
+                            <img src={japanImage} alt="Japan" />
                             <FaHeart
                                 className={`heartIcon ${likedCountries.includes('Japan') ? 'liked' : ''}`}
-                                onClick={() => handleLikeToggle('Japan')}
+                                onClick={(e) => {
+                                    e.stopPropagation();
+                                    handleLikeToggle('Japan');
+                                }}
                             />
+                        </div>
                         <p>Japan</p>
                     </div>
-                    <div className="countryItem">
-                        <img src={turkeyImage} alt="Turkey" />
+                    <div className="countryItem" onClick={() => handleImageClick('Turkey')}>
+                        <div className="countryImageContainer">
+                            <img src={turkeyImage} alt="Turkey" />
                             <FaHeart
                                 className={`heartIcon ${likedCountries.includes('Turkey') ? 'liked' : ''}`}
-                                onClick={() => handleLikeToggle('Turkey')}
+                                onClick={(e) => {
+                                    e.stopPropagation();
+                                    handleLikeToggle('Turkey');
+                                }}
                             />
+                        </div>
                         <p>Turkey</p>
                     </div>
-                    <div className="countryItem">
-                        <img src={netherlandsImage} alt="Netherlands" />
-                        <FaHeart
+                    <div className="countryItem" onClick={() => handleImageClick('Netherlands')}>
+                        <div className="countryImageContainer">
+                            <img src={netherlandsImage} alt="Netherlands" />
+                            <FaHeart
                                 className={`heartIcon ${likedCountries.includes('Netherlands') ? 'liked' : ''}`}
-                                onClick={() => handleLikeToggle('Netherlands')}
+                                onClick={(e) => {
+                                    e.stopPropagation();
+                                    handleLikeToggle('Netherlands');
+                                }}
                             />
+                        </div>
                         <p>Netherlands</p>
                     </div>
-                    <div className="countryItem">
-                        <img src={algeriaImage} alt="Algeria" />
-                        <FaHeart
+                    <div className="countryItem" onClick={() => handleImageClick('Algeria')}>
+                        <div className="countryImageContainer">
+                            <img src={algeriaImage} alt="Algeria" />
+                            <FaHeart
                                 className={`heartIcon ${likedCountries.includes('Algeria') ? 'liked' : ''}`}
-                                onClick={() => handleLikeToggle('Algeria')}
+                                onClick={(e) => {
+                                    e.stopPropagation();
+                                    handleLikeToggle('Algeria');
+                                }}
                             />
+                        </div>
                         <p>Algeria</p>
                     </div>
                 </div>
@@ -197,10 +217,13 @@ const Main = () => {
                     </div>
                 </div>
             </div>
-        
+
+            <div id="packages" className="packageSection">
+                <h2 className="infoHeader">Explore Our Travel Packages</h2>
+            </div>
 
         </section>
     )
 }
 
-export default Main
+export default Main;

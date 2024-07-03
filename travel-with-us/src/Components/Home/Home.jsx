@@ -20,7 +20,7 @@
         }, [])
 
         return (
-            <section className='home'>
+            <section id="home" className='home'>
                 <div className="overlay"></div>
                 <img src={heroImage} alt="Hero Image" className="hero-image" />
 

@@ -1,23 +1,31 @@
-import React from 'react'
-import './app.css'
-import Footer from './Components/Footer/Footer'
-import Home from './Components/Home/Home'
-import Main from './Components/Main/Main'
-import Navbar from './Components/Navbar/Navbar'
+import React from 'react';
+import './app.css';
+import Footer from './Components/Footer/Footer';
+import Home from './Components/Home/Home';
+import Main from './Components/Main/Main';
+import Navbar from './Components/Navbar/Navbar';
 
 import China from './Components/Countries/China';
 
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 const App = () => {
     return (
-        <>
-        <Navbar/>
-        <Home/>
-        <Main/>
-        <Footer/>
-        </>
-    )
+        <Router>
+            <Navbar />
+            <Routes>
+                <Route path="/" element={
+                    <>
+                        <Home />
+                        <Main />
+                    </>
+                } />
+                <Route path="/china" element={<China />} />
+                {/* Add more routes for other countries if needed */}
+            </Routes>
+            <Footer />
+        </Router>
+    );
 }
 
-export default App
+export default App;
