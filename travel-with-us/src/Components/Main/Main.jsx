@@ -17,8 +17,52 @@ import thailandImage from '../../Assets/thailand.png';
 import franceImage from '../../Assets/france.png';
 import brazilImage from '../../Assets/brazil.png';
 import uaeImage from '../../Assets/uae.png';
+import boraboraImage from '../../Assets/borabora.png';
+import mexicoImage from '../../Assets/mexico.png';
+import cubaImage from '../../Assets/cuba.png';
+import maldivesImage from '../../Assets/maldives.png';
+import planeImage from '../../Assets/plane.png';
 
 import { FaCalendarAlt, FaStar, FaDollarSign, FaHeart } from 'react-icons/fa';
+
+const travelPackages = [
+    {
+        id: 1,
+        country: 'Mexico',
+        name: 'Barcelo Maya Tropical',
+        image: mexicoImage,
+        reviews: 500,
+        price: 599,
+        discount: 25,
+    },
+    {
+        id: 2,
+        country: 'Cuba',
+        name: 'Paradisus Princesa del Mar',
+        image: cubaImage,
+        reviews: 743,
+        price: 489,
+        discount: 20,
+    },
+    {
+        id: 3,
+        country: 'Bora Bora',
+        name: 'Pearl Beach Resort & Spa',
+        image: boraboraImage,
+        reviews: 980,
+        price: 799,
+        discount: 15,
+    },
+    {
+        id: 4,
+        country: 'Maldives',
+        name: 'Furaveri Maldives',
+        image: maldivesImage,
+        reviews: 2090,
+        price: 999,
+        discount: 25,
+    },
+];
 
 const Main = () => {
     const navigate = useNavigate();
@@ -134,41 +178,41 @@ const Main = () => {
                     <div className="countryItem">
                         <img src={moroccoImage} alt="Morocco" />
                         <FaHeart
-                                className={`heartIcon ${likedCountries.includes('Morocco') ? 'liked' : ''}`}
-                                onClick={() => handleLikeToggle('Morocco')}
-                            />
+                            className={`heartIcon ${likedCountries.includes('Morocco') ? 'liked' : ''}`}
+                            onClick={() => handleLikeToggle('Morocco')}
+                        />
                         <p>Morocco</p>
                     </div>
                     <div className="countryItem">
                         <img src={newzealandImage} alt="New Zealand" />
                         <FaHeart
-                                className={`heartIcon ${likedCountries.includes('New Zealand') ? 'liked' : ''}`}
-                                onClick={() => handleLikeToggle('New Zealand')}
-                            />
+                            className={`heartIcon ${likedCountries.includes('New Zealand') ? 'liked' : ''}`}
+                            onClick={() => handleLikeToggle('New Zealand')}
+                        />
                         <p>New Zealand</p>
                     </div>
                     <div className="countryItem">
                         <img src={malaysiaImage} alt="Malaysia" />
                         <FaHeart
-                                className={`heartIcon ${likedCountries.includes('Malaysia') ? 'liked' : ''}`}
-                                onClick={() => handleLikeToggle('Malaysia')}
-                            />
+                            className={`heartIcon ${likedCountries.includes('Malaysia') ? 'liked' : ''}`}
+                            onClick={() => handleLikeToggle('Malaysia')}
+                        />
                         <p>Malaysia</p>
                     </div>
                     <div className="countryItem">
                         <img src={peruImage} alt="Peru" />
                         <FaHeart
-                                className={`heartIcon ${likedCountries.includes('Peru') ? 'liked' : ''}`}
-                                onClick={() => handleLikeToggle('Peru')}
-                            />
+                            className={`heartIcon ${likedCountries.includes('Peru') ? 'liked' : ''}`}
+                            onClick={() => handleLikeToggle('Peru')}
+                        />
                         <p>Peru</p>
                     </div>
                     <div className="countryItem">
                         <img src={icelandImage} alt="Iceland" />
                         <FaHeart
-                                className={`heartIcon ${likedCountries.includes('Iceland') ? 'liked' : ''}`}
-                                onClick={() => handleLikeToggle('Iceland')}
-                            />
+                            className={`heartIcon ${likedCountries.includes('Iceland') ? 'liked' : ''}`}
+                            onClick={() => handleLikeToggle('Iceland')}
+                        />
                         <p>Iceland</p>
                     </div>
                 </div>
@@ -178,41 +222,41 @@ const Main = () => {
                     <div className="countryItem">
                         <img src={spainImage} alt="Spain" />
                         <FaHeart
-                                className={`heartIcon ${likedCountries.includes('Spain') ? 'liked' : ''}`}
-                                onClick={() => handleLikeToggle('Spain')}
-                            />
+                            className={`heartIcon ${likedCountries.includes('Spain') ? 'liked' : ''}`}
+                            onClick={() => handleLikeToggle('Spain')}
+                        />
                         <p>Spain</p>
                     </div>
                     <div className="countryItem">
                         <img src={thailandImage} alt="Thailand" />
                         <FaHeart
-                                className={`heartIcon ${likedCountries.includes('Thailand') ? 'liked' : ''}`}
-                                onClick={() => handleLikeToggle('Thailand')}
-                            />
+                            className={`heartIcon ${likedCountries.includes('Thailand') ? 'liked' : ''}`}
+                            onClick={() => handleLikeToggle('Thailand')}
+                        />
                         <p>Thailand</p>
                     </div>
                     <div className="countryItem">
                         <img src={franceImage} alt="France" />
                         <FaHeart
-                                className={`heartIcon ${likedCountries.includes('France') ? 'liked' : ''}`}
-                                onClick={() => handleLikeToggle('France')}
-                            />
+                            className={`heartIcon ${likedCountries.includes('France') ? 'liked' : ''}`}
+                            onClick={() => handleLikeToggle('France')}
+                        />
                         <p>France</p>
                     </div>
                     <div className="countryItem">
                         <img src={brazilImage} alt="brazil" />
                         <FaHeart
-                                className={`heartIcon ${likedCountries.includes('Brazil') ? 'liked' : ''}`}
-                                onClick={() => handleLikeToggle('Brazil')}
-                            />
+                            className={`heartIcon ${likedCountries.includes('Brazil') ? 'liked' : ''}`}
+                            onClick={() => handleLikeToggle('Brazil')}
+                        />
                         <p>Brazil</p>
                     </div>
                     <div className="countryItem">
                         <img src={uaeImage} alt="uae" />
                         <FaHeart
-                                className={`heartIcon ${likedCountries.includes('UAE') ? 'liked' : ''}`}
-                                onClick={() => handleLikeToggle('UAE')}
-                            />
+                            className={`heartIcon ${likedCountries.includes('UAE') ? 'liked' : ''}`}
+                            onClick={() => handleLikeToggle('UAE')}
+                        />
                         <p>United Arab Emirates</p>
                     </div>
                 </div>
@@ -220,8 +264,21 @@ const Main = () => {
 
             <div id="packages" className="packageSection">
                 <h2 className="infoHeader">Explore Our Travel Packages</h2>
+                <div className="packageGrid">
+                    {travelPackages.map((pkg) => (
+                        <div className="packageItem" key={pkg.id}>
+                            <img src={pkg.image} alt={pkg.country} />
+                            <div className="packageDetails">
+                                <h3>{pkg.name}</h3>
+                                <p>{pkg.country}</p>
+                                <p>({pkg.reviews} Reviews)</p>
+                                <p>CAD ${pkg.price} per night <span className="discount">Save {pkg.discount}%</span></p>
+                                <button className="bookButton" onClick={() => handleImageClick(pkg.country)}>Book Now</button>
+                            </div>
+                        </div>
+                    ))}
+                </div>
             </div>
-
         </section>
     )
 }

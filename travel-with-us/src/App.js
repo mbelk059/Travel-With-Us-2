@@ -21,7 +21,6 @@ const App = () => {
                     </>
                 } />
                 <Route path="/china" element={<China />} />
-                {/* Add more routes for other countries if needed */}
             </Routes>
             <Footer />
         </Router>
