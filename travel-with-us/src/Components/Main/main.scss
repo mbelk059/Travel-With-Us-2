@@ -105,6 +105,7 @@
     font-size: 0.9rem;
     color: var(--blackColour);
     font-weight: 500;
+    cursor: pointer;
 }
 
 .countryItem {
@@ -259,7 +260,117 @@
     border-radius: 5px;
     cursor: pointer;
     transition: background 0.3s ease-in-out;
+}   
+
+.aboutContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: left;
+    gap: 2rem;
 }
+
+.aboutText {
+    max-width: 600px;
+}
+
+.aboutText h2 {
+    font-size: 2rem;
+    color: var(--PrimaryColour);
+    margin-bottom: 1rem;
+}
+
+.aboutText p {
+    font-size: 1rem;
+    color: var(--blackColour)
+    line-height: 1.5;
+}
+
+.aboutImage img {
+    width: 100%;
+    max-width: 600px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(196, 194, 194, 0.1);
+}
+
+.aboutSection {
+    padding: 2rem; /* Add padding to the section if necessary */
+    margin-bottom: 8rem; /* Adjust the value as needed */
+}
+
+@media screen and (min-width: 768px) {
+    .aboutContent {
+        flex-direction: row;
+    }
+
+    .aboutText, .aboutImage {
+        flex: 1;
+    }
+
+    .aboutText {
+        padding-right: 2rem;
+    }
+}
+
+.footer {
+    border-top: 1px solid #ccc; /* Add a line on top */
+}
+
+.footerContent {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.footerSection {
+    flex: 1;
+    min-width: 150px;
+    padding: 1rem;
+}
+
+.footerSection h4 {
+    font-size: 1.1rem;
+    color: var(--PrimaryColour);
+    margin-bottom: 1rem;
+}
+
+.footerSection ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footerSection li {
+    margin-bottom: 0.5rem;
+    font-size: 0.8rem;
+    color: var(--textColour);
+}
+
+.footerSection li:hover{
+    cursor: pointer;
+}
+
+.footerSection p {
+    font-size: 1rem;
+    color: var(--blackColour);
+}
+
+.footerSection p:hover{
+    cursor: pointer;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .footerContent {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+
 
 /* Responsive adjustments */
 @media (max-width: 1200px) {

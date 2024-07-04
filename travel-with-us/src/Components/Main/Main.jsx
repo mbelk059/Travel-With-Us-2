@@ -21,7 +21,7 @@ import boraboraImage from '../../Assets/borabora.png';
 import mexicoImage from '../../Assets/mexico.png';
 import cubaImage from '../../Assets/cuba.png';
 import maldivesImage from '../../Assets/maldives.png';
-import planeImage from '../../Assets/plane.png';
+import famImage from '../../Assets/fam.png';
 
 import { FaCalendarAlt, FaStar, FaDollarSign, FaHeart } from 'react-icons/fa';
 
@@ -273,12 +273,70 @@ const Main = () => {
                                 <p>{pkg.country}</p>
                                 <p>({pkg.reviews} Reviews)</p>
                                 <p>CAD ${pkg.price} per night <span className="discount">Save {pkg.discount}%</span></p>
+                                <p>Includes taxes and fees</p>
                                 <button className="bookButton" onClick={() => handleImageClick(pkg.country)}>Book Now</button>
                             </div>
                         </div>
                     ))}
                 </div>
             </div>
+            
+            <div id="packages" className="packageSection">
+                <h2 className="infoHeader">About</h2>
+            </div>
+
+            <div id="about" className="aboutSection">
+                <div className="aboutContent">
+                    <div className="aboutText">
+                        <h2>Travel With Us: Your Gateway to Unforgettable Journeys</h2>
+                        <p>
+                            At Travel With Us, we believe that every journey should be a memorable adventure. 
+                            Our mission is to make travel planning simple, enjoyable, and accessible for everyone. 
+                            Whether you're a seasoned traveler or planning your first trip, we're here to help you 
+                            discover new destinations, book the best flights and accommodations, and create experiences 
+                            that will last a lifetime.
+                        </p>
+                    </div>
+                    <div className="aboutImage">
+                        <img src={famImage} alt="Family traveling" />
+                    </div>
+                </div>
+            </div>
+
+            <footer className='footer'>
+                <div className='footerContent'>
+                    <div className='footerSection'>
+                        <h4>Travel With Us</h4>
+                        <p>Your trusted travel partner.</p>
+                    </div>
+                    <div className='footerSection'>
+                        <h4>Explore</h4>
+                        <ul>
+                            <li>Destinations</li>
+                            <li>Packages</li>
+                            <li>Blog</li>
+                        </ul>
+                    </div>
+                    <div className='footerSection'>
+                        <h4>Help</h4>
+                        <ul>
+                            <li>FAQ</li>
+                            <li>Contact Us</li>
+                            <li>Support Center</li>
+                        </ul>
+                    </div>
+                    <div className='footerSection'>
+                        <h4>About</h4>
+                        <ul>
+                            <li>Our Story</li>
+                            <li>Team</li>
+                            <li>Careers</li>
+                        </ul>
+                    </div>
+                </div>
+            </footer>
+
+
         </section>
     )
 }
