@@ -124,62 +124,60 @@ const Japan = () => {
                 </section>
 
                 <Modal isOpen={modalIsOpen} onRequestClose={closeModal} className="hotelModal">
-    <div className="modalContent">
-        <div className="imageSection">
-            <img src={hotel} alt="Hotel Granvia Kyoto" />
-            <h2>Hotel Granvia Kyoto</h2>
-        </div>
-        <div className="details">
-            <p className="price">CA $217 per night</p>
-            <p className='taxes'>includes taxes and fees</p>
-            <button className="dealButton">Great Deal!</button>
-            <div className="starss">★★★★★</div>
-            <div className="info">
-                <p>Set in the contemporary Kyoto Station complex, this sprawling, high-end hotel features interiors filled with modern art. It's 2 km from To-ji Buddhist temple and 4 km Nijo-jo Castle.</p>
-            </div>
-        </div>
-    </div>
-    <div className="booking-info">
-        <div className="booking-option">
-            <label>Check In: </label>
-            <input type="date" />
-            <div className="additional-info">
-                <div className="info-item"><FaCheck /> Reserve now, pay later</div>
-                <div className="info-item"><FaWifi /> Free WiFi</div>
-                <div className="info-item"><FaBed /> 1 Queen Bed</div>
-                <div className="info-item"><FaUsers /> Sleeps 2</div>
-                <div className="info-item"><FaRulerCombined /> 18 sq m</div>
-            </div>
-        </div>
-        <div className="booking-option">
-            <label>Check Out: </label>
-            <input type="date" />
-            <div className="additional-info">
-                <h3>Room Options</h3>
-                <div className="info-item"><FaUtensils /> Breakfast buffet + CAD $25</div>
-                <div className="info-item"><FaTimes /> No extras + CAD $0</div>
-                <p className="info-item small-green">Fully refundable before Wed, Jun 26</p>
-                <p className="info-item small-green">No prepayment needed</p>
-            </div>
-        </div>
-        <div className="booking-option">
-            <label>Travellers: </label>
-            <select>
-                <option value="1">1 traveller</option>
-                <option value="2">2 travellers</option>
-                <option value="3">3 travellers</option>
-                <option value="4">4 travellers</option>
-            </select>
-        </div>
-    </div>
-    <div className="actions">
-        <button onClick={closeModal} className="closeButton">Close</button>
-        <div className="info-item only-left"><FaExclamationTriangle /> Only 2 left</div>
-        <button className="bookButton">Book Now</button>
-    </div>
-</Modal>
-
-
+                    <div className="modalContent">
+                        <div className="imageSection">
+                            <img src={hotel} alt="Hotel Granvia Kyoto" />
+                            <h2>Hotel Granvia Kyoto</h2>
+                        </div>
+                        <div className="details">
+                            <p className="price">CA $217 per night</p>
+                            <p className='taxes'>includes taxes and fees</p>
+                            <button className="dealButton">Great Deal!</button>
+                            <div className="starss">★★★★★</div>
+                            <div className="info">
+                                <p>Set in the contemporary Kyoto Station complex, this sprawling, high-end hotel features interiors filled with modern art. It's 2 km from To-ji Buddhist temple and 4 km Nijo-jo Castle.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="booking-info">
+                        <div className="booking-option">
+                            <label>Check In: </label>
+                            <input type="date" />
+                            <div className="additional-info">
+                                <div className="info-item"><FaCheck /> Reserve now, pay later</div>
+                                <div className="info-item"><FaWifi /> Free WiFi</div>
+                                <div className="info-item"><FaBed /> 1 Queen Bed</div>
+                                <div className="info-item"><FaUsers /> Sleeps 2</div>
+                                <div className="info-item"><FaRulerCombined /> 18 sq m</div>
+                            </div>
+                        </div>
+                        <div className="booking-option">
+                            <label>Check Out: </label>
+                            <input type="date" />
+                            <div className="additional-info">
+                                <h3>Room Options</h3>
+                                <div className="info-item"><FaUtensils /> Breakfast buffet + CAD $25</div>
+                                <div className="info-item"><FaTimes /> No extras + CAD $0</div>
+                                <p className="info-item small-green">Fully refundable before Wed, Jun 26</p>
+                                <p className="info-item small-green">No prepayment needed</p>
+                            </div>
+                        </div>
+                        <div className="booking-option">
+                            <label>Travellers: </label>
+                            <select>
+                                <option value="1">1 traveller</option>
+                                <option value="2">2 travellers</option>
+                                <option value="3">3 travellers</option>
+                                <option value="4">4 travellers</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div className="actions">
+                        <button onClick={closeModal} className="closeButton">Close</button>
+                        <div className="info-item only-left"><FaExclamationTriangle /> Only 2 left</div>
+                        <button className="bookButton">Book Now</button>
+                    </div>
+                </Modal>
 
                 <section className="reviews">
                     <h2 className="sectionTitle">Traveler reviews</h2>
