@@ -261,9 +261,160 @@ header .sign-in-btn {
     font-size: 1.2em;
 }
 
+.starss {
+    color: #FFD700;
+    font-size: 1.8em;
+}
+
 .time {
     color: #999;
     font-size: 0.9em;
+}
+
+.hotelModal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 800px;
+    background: white;
+    padding: 30px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 16px;
+    z-index: 1000;
+    overflow: hidden;
+}
+
+.modalContent {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+}
+
+.imageSection {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.imageSection img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.imageSection h2 {
+    margin: 0;
+    font-size: 20px;
+    text-align: left;
+    margin-left: 1px;
+}
+
+.details {
+    flex: 1;
+    margin-left: 20px;
+}
+
+.details .taxes {
+    font-size: 0.75rem;
+    color: var(--textColour);
+}
+
+.details .price {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 1px;
+    margin-top: 10px;
+}
+
+.details .info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.details .info p {
+    margin: 4px 0;
+    font-size: 0.9rem;
+}
+
+.booking-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.booking-option {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.booking-option label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.booking-option input,
+.booking-option select {
+    width: 240px;
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+
+.actions {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 20px;
+    align-items: center;
+}
+
+.actions .closeButton {
+    background: #ddd;
+    color: #333;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s;
+}
+
+.actions .closeButton:hover {
+    background: #ccc;
+}
+
+.actions .bookButton {
+    background: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s;
+}
+
+.actions .bookButton:hover {
+    background: #0056b3;
+}
+
+.dealButton {
+    background: #23841b;
+    color: white;
+    padding: 7px 10px;
+    border: none;
+    border-radius: 4px;
+    font-size: 13px;
+    transition: background 0.3s;
+    margin-top: 5px;
 }
 
 
@@ -343,3 +494,4 @@ header .sign-in-btn {
         grid-template-columns: 1fr;
     }
 }
+

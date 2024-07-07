@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import './japan.css';  
+import Modal from 'react-modal';
+import './japan.css';
 
 import japann from '../../Assets/japann.png';
 import excel from '../../Assets/excel.png';
@@ -13,6 +14,7 @@ import mount from '../../Assets/mount.png';
 import palace from '../../Assets/palace.png';
 import park from '../../Assets/park.png';
 import shibuya from '../../Assets/shibuya.png';
+import hotel from '../../Assets/hotel.png';
 import nano from '../../Assets/nana.png';
 import tori from '../../Assets/tori.png';
 import marco from '../../Assets/marco.png';
@@ -22,6 +24,7 @@ import { FaHeart } from 'react-icons/fa';
 const Japan = () => {
     const [likedAttractions, setLikedAttractions] = useState([]);
     const [likedHotels, setLikedHotels] = useState([]);
+    const [modalIsOpen, setModalIsOpen] = useState(false);
 
     const handleLikeToggle = (attraction) => {
         if (likedAttractions.includes(attraction)) {
@@ -39,6 +42,14 @@ const Japan = () => {
         }
     };
 
+    const openModal = () => {
+        setModalIsOpen(true);
+    };
+
+    const closeModal = () => {
+        setModalIsOpen(false);
+    };
+
     return (
         <>
             <main className="main-content">
@@ -50,7 +61,7 @@ const Japan = () => {
                         <div className="welcomeText">
                             <h2>Welcome to Japan!</h2>
                             <p>
-                            Experience the perfect blend of ancient traditions and cutting-edge modernity in Japan. Explore iconic landmarks, from the historic temples of Kyoto to the bustling streets of Tokyo. Discover breathtaking natural landscapes, savor world-renowned cuisine, and immerse yourself in the rich cultural heritage of this fascinating country. Whether you're seeking adventure, relaxation, or cultural enrichment, Japan offers an unforgettable journey for every traveler.
+                                Experience the perfect blend of ancient traditions and cutting-edge modernity in Japan. Explore iconic landmarks, from the historic temples of Kyoto to the bustling streets of Tokyo. Discover breathtaking natural landscapes, savor world-renowned cuisine, and immerse yourself in the rich cultural heritage of this fascinating country. Whether you're seeking adventure, relaxation, or cultural enrichment, Japan offers an unforgettable journey for every traveler.
                             </p>
                             <button className="btnn btnn-primary">Learn more</button>
                             <button className="btnn btnn-secondary">Explore Japan</button>
@@ -95,7 +106,7 @@ const Japan = () => {
                             { src: excel, name: 'Shibuya Excel Hotel Tokyu' },
                             { src: park, name: 'Park Hotel Tokyo' }
                         ].map((hotel, index) => (
-                            <div className="countryItem" key={index} onClick={() => handleHotelLikeToggle(hotel.name)}>
+                            <div className="countryItem" key={index} onClick={() => hotel.name === 'Hotel Granvia Tokyo' ? openModal() : handleHotelLikeToggle(hotel.name)}>
                                 <div className="countryImageContainer">
                                     <img src={hotel.src} alt={hotel.name} />
                                     <FaHeart
@@ -111,6 +122,51 @@ const Japan = () => {
                         ))}
                     </div>
                 </section>
+
+                <Modal isOpen={modalIsOpen} onRequestClose={closeModal} className="hotelModal">
+    <div className="modalContent">
+        <div className="imageSection">
+            <img src={hotel} alt="Hotel Granvia Kyoto" />
+            <h2>Hotel Granvia Kyoto</h2>
+        </div>
+        <div className="details">
+            <p className="price">CA $217 per night</p>
+            <p className='taxes'>includes taxes and fees</p>
+            <button className="dealButton">Great Deal!</button>
+            <div className="starss">★★★★★</div>
+            <div className="info">
+                <p>Set in the contemporary Kyoto Station complex, this sprawling, high-end hotel features interiors filled with modern art. It's 2 km from To-ji Buddhist temple and 4 km Nijo-jo Castle.</p>
+            </div>
+        </div>
+    </div>
+    <div className="booking-info">
+        <div className="booking-option">
+            <label>Check In: </label>
+            <input type="date" />
+        </div>
+        <div className="booking-option">
+            <label>Check Out: </label>
+            <input type="date" />
+        </div>
+        <div className="booking-option">
+            <label>Travellers: </label>
+            <select>
+                <option value="1">1 traveller</option>
+                <option value="2">2 travellers</option>
+                <option value="3">3 travellers</option>
+                <option value="4">4 travellers</option>
+            </select>
+        </div>
+    </div>
+    <div className="actions">
+        <button onClick={closeModal} className="closeButton">Close</button>
+        <button className="bookButton">Book Now</button>
+    </div>
+</Modal>
+
+
+
+
 
                 <section className="reviews">
                     <h2 className="sectionTitle">Traveler reviews</h2>
@@ -133,8 +189,7 @@ const Japan = () => {
                             </div>
                         ))}
                     </div>
-</section>
-
+                </section>
             </main>
 
             <footer className='footer'>
@@ -169,8 +224,6 @@ const Japan = () => {
                     </div>
                 </div>
             </footer>
-
-
         </>
     );
 };
