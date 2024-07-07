@@ -78,7 +78,7 @@ const Main = () => {
     };
 
     const handleImageClick = (country) => {
-        navigate(`/${country.toLowerCase()}`); // Navigate to the country route dynamically
+        navigate(`/${country.toLowerCase()}`);
     };
 
     const scrollTargetStyle = {
