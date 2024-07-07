@@ -92,7 +92,7 @@ const Main = () => {
     return (
         <section id="discover" className='main container section' style={scrollTargetStyle}>
             <div className="infoSection">
-                <h2 className="infoHeader">Plan, Book, Travel—It's That Simple</h2>
+                <h3 className="infoHeader">Plan, Book, Travel—It's That Simple</h3>
                 <div className="infoContent" data-aos="fade-up">
                     <div className="infoItem">
                         <FaCalendarAlt className="infoIcon" />
@@ -113,7 +113,7 @@ const Main = () => {
             </div>
 
             <div className="destinationSection">
-                <h2 className="sectionTitle">Explore trending destinations</h2>
+                <h3 className="sectionTitle">Explore trending destinations</h3>
                 <div className="countryGrid">
                     <div className="countryItem" onClick={() => handleImageClick('Japan')}>
                         <div className="countryImageContainer">
@@ -182,7 +182,7 @@ const Main = () => {
                     </div>
                 </div>
 
-                <h2 className="sectionTitle">Check out these beautiful countries</h2>
+                <h3 className="sectionTitle">Check out these beautiful countries</h3>
                 <div className="countryGrid">
                     <div className="countryItem">
                         <img src={moroccoImage} alt="Morocco" />
@@ -226,7 +226,7 @@ const Main = () => {
                     </div>
                 </div>
 
-                <h2 className="sectionTitle">Most visited locations</h2>
+                <h3 className="sectionTitle">Most visited locations</h3>
                 <div className="countryGrid">
                     <div className="countryItem">
                         <img src={spainImage} alt="Spain" />
@@ -272,7 +272,7 @@ const Main = () => {
             </div>
 
             <div id="packages" className="packageSection" style={scrollTargetStyle2}>
-                <h2 className="infoHeader">Explore Our Travel Packages</h2>
+                <h3 className="infoHeader">Explore Our Travel Packages</h3>
                 <div className="packageGrid">
                     {travelPackages.map((pkg) => (
                         <div className="packageItem" key={pkg.id}>
@@ -280,6 +280,7 @@ const Main = () => {
                             <div className="packageDetails">
                                 <h3>{pkg.name}</h3>
                                 <p>{pkg.country}</p>
+                                <div className="starss">★★★★★</div>
                                 <p>({pkg.reviews} Reviews)</p>
                                 <p>CAD ${pkg.price} per night <span className="discount">Save {pkg.discount}%</span></p>
                                 <p>Includes taxes and fees</p>
@@ -291,7 +292,7 @@ const Main = () => {
             </div>
             
             <div className="packageSection">
-                <h2 className="infoHeader">About</h2>
+                <h3 className="infoHeader">About</h3>
             </div>
 
             <div id="about" className="aboutSection" style={scrollTargetStyle}>

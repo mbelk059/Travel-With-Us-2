@@ -15,7 +15,7 @@
 
 // Main section styles
 .main {
-    padding: 2rem 1rem 0; /* Adjusted padding to reduce top gap */
+    padding: 2rem 1rem 0;
 }
 
 .secTitle .title {
@@ -51,18 +51,18 @@
 .infoIcon {
     font-size: 1.6rem;
     color: #6F87A9;
-    margin-bottom: 0.5rem; /* Adjust margin as needed */
+    margin-bottom: 0.5rem; 
 }
 
 .infoItem h3 {
-    font-size: 1rem; /* Adjusted font size */
+    font-size: 1rem; 
     margin-bottom: 0.5rem;
-    color: var(--blackColour); /* Set primary color */
+    color: var(--blackColour); 
 }
 
 .infoItem p {
-    font-size: 0.85rem; /* Adjusted font size */
-    color: var(--textColour); /* Use text color variable */
+    font-size: 0.85rem; 
+    color: var(--textColour); 
 }
 
 @media screen and (min-width: 768px) {
@@ -115,7 +115,7 @@
 }
 
 .countryItem:hover {
-    transform: translateY(-5px); /* Example of a lift animation on hover */
+    transform: translateY(-5px);
 }
 
 .countryImageContainer {
@@ -127,24 +127,24 @@
 
 .heartIcon {
     position: absolute;
-    top: 8px; /* Adjust position as needed */
-    right: 8px; /* Adjust position as needed */
+    top: 8px; 
+    right: 8px; 
     font-size: 1.5rem;
     stroke-width: 2px;
-    color: #d3d3d3; /* Heart outline color */
+    color: #d3d3d3; 
     cursor: pointer;
-    opacity: 0.7; /* Adjust opacity as needed */
-    transition: transform 0.2s ease, color 0.2s ease, opacity 0.2s ease; /* Added transform and opacity transition */
+    opacity: 0.7;
+    transition: transform 0.2s ease, color 0.2s ease, opacity 0.2s ease; 
 }
 
 .heartIcon:hover {
-    transform: scale(1.3); /* Example of scale animation on hover */
+    transform: scale(1.3); 
 }
 
 .heartIcon.liked {
     color: white;
-    opacity: 1; /* Fully opaque when liked */
-    transform: scale(1.1); /* Example of scale animation when liked */
+    opacity: 1; 
+    transform: scale(1.1); 
 }
 
 .travelPackageGrid {
@@ -194,7 +194,6 @@
     text-align: center;
 }
 
-/* Add these styles to your main.css file */
 .packageGrid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -290,8 +289,8 @@
 }
 
 .aboutSection {
-    padding: 2rem; /* Add padding to the section if necessary */
-    margin-bottom: 8rem; /* Adjust the value as needed */
+    padding: 2rem; 
+    margin-bottom: 8rem; 
 }
 
 @media screen and (min-width: 768px) {
@@ -309,7 +308,7 @@
 }
 
 .footer {
-    border-top: 1px solid #ccc; /* Add a line on top */
+    border-top: 1px solid #ccc; 
 }
 
 .footerContent {
@@ -366,9 +365,6 @@
     }
 }
 
-
-
-/* Responsive adjustments */
 @media (max-width: 1200px) {
     .packageGrid {
         grid-template-columns: repeat(3, 1fr);
