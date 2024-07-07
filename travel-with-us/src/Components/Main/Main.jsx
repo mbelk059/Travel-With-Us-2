@@ -65,6 +65,7 @@ const travelPackages = [
 ];
 
 const Main = () => {
+
     const navigate = useNavigate();
     const [likedCountries, setLikedCountries] = useState([]);
 
@@ -114,19 +115,6 @@ const Main = () => {
             <div className="destinationSection">
                 <h2 className="sectionTitle">Explore trending destinations</h2>
                 <div className="countryGrid">
-                    <div className="countryItem" onClick={() => handleImageClick('China')}>
-                        <div className="countryImageContainer">
-                            <img src={chinaImage} alt="China" />
-                            <FaHeart
-                                className={`heartIcon ${likedCountries.includes('China') ? 'liked' : ''}`}
-                                onClick={(e) => {
-                                    e.stopPropagation();
-                                    handleLikeToggle('China');
-                                }}
-                            />
-                        </div>
-                        <p>China</p>
-                    </div>
                     <div className="countryItem" onClick={() => handleImageClick('Japan')}>
                         <div className="countryImageContainer">
                             <img src={japanImage} alt="Japan" />
@@ -135,6 +123,19 @@ const Main = () => {
                                 onClick={(e) => {
                                     e.stopPropagation();
                                     handleLikeToggle('Japan');
+                                }}
+                            />
+                        </div>
+                        <p>Japan</p>
+                    </div>
+                    <div className="countryItem" onClick={() => handleImageClick('China')}>
+                        <div className="countryImageContainer">
+                            <img src={chinaImage} alt="China" />
+                            <FaHeart
+                                className={`heartIcon ${likedCountries.includes('China') ? 'liked' : ''}`}
+                                onClick={(e) => {
+                                    e.stopPropagation();
+                                    handleLikeToggle('China');
                                 }}
                             />
                         </div>

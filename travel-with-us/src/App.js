@@ -5,7 +5,7 @@ import Home from './Components/Home/Home';
 import Main from './Components/Main/Main';
 import Navbar from './Components/Navbar/Navbar';
 
-import China from './Components/Countries/China';
+import Japan from './Components/Countries/Japan';
 
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
@@ -20,7 +20,7 @@ const App = () => {
                         <Main />
                     </>
                 } />
-                <Route path="/china" element={<China />} />
+                <Route path="/japan" element={<Japan />} />
             </Routes>
             <Footer />
         </Router>
