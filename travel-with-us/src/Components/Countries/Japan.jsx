@@ -169,6 +169,8 @@ const Japan = () => {
                                 <option value="2">2 travellers</option>
                                 <option value="3">3 travellers</option>
                                 <option value="4">4 travellers</option>
+                                <option value="5">5 travellers</option>
+                                <option value="6">6+ travellers</option>
                             </select>
                         </div>
                     </div>
