@@ -19,7 +19,7 @@ import nano from '../../Assets/nana.png';
 import tori from '../../Assets/tori.png';
 import marco from '../../Assets/marco.png';
 
-import { FaHeart } from 'react-icons/fa';
+import { FaHeart, FaCheck, FaWifi, FaBed, FaUsers, FaRulerCombined, FaUtensils, FaTimes, FaUndo, FaDollarSign, FaExclamationTriangle } from 'react-icons/fa';
 
 const Japan = () => {
     const [likedAttractions, setLikedAttractions] = useState([]);
@@ -143,10 +143,24 @@ const Japan = () => {
         <div className="booking-option">
             <label>Check In: </label>
             <input type="date" />
+            <div className="additional-info">
+                <div className="info-item"><FaCheck /> Reserve now, pay later</div>
+                <div className="info-item"><FaWifi /> Free WiFi</div>
+                <div className="info-item"><FaBed /> 1 Queen Bed</div>
+                <div className="info-item"><FaUsers /> Sleeps 2</div>
+                <div className="info-item"><FaRulerCombined /> 18 sq m</div>
+            </div>
         </div>
         <div className="booking-option">
             <label>Check Out: </label>
             <input type="date" />
+            <div className="additional-info">
+                <h3>Room Options</h3>
+                <div className="info-item"><FaUtensils /> Breakfast buffet + CAD $25</div>
+                <div className="info-item"><FaTimes /> No extras + CAD $0</div>
+                <p className="info-item small-green">Fully refundable before Wed, Jun 26</p>
+                <p className="info-item small-green">No prepayment needed</p>
+            </div>
         </div>
         <div className="booking-option">
             <label>Travellers: </label>
@@ -160,11 +174,10 @@ const Japan = () => {
     </div>
     <div className="actions">
         <button onClick={closeModal} className="closeButton">Close</button>
+        <div className="info-item only-left"><FaExclamationTriangle /> Only 2 left</div>
         <button className="bookButton">Book Now</button>
     </div>
 </Modal>
-
-
 
 
 

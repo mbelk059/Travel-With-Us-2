@@ -270,16 +270,15 @@ header .sign-in-btn {
     color: #999;
     font-size: 0.9em;
 }
-
 .hotelModal {
     position: fixed;
-    top: 50%;
+    top: 55%;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 90%;
     max-width: 800px;
     background: white;
-    padding: 30px;
+    padding: 20px;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
     border-radius: 16px;
     z-index: 1000;
@@ -344,7 +343,7 @@ header .sign-in-btn {
 .booking-info {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
     margin: 20px 0;
 }
 
@@ -366,6 +365,22 @@ header .sign-in-btn {
     border-radius: 4px;
     border: 1px solid #ccc;
     font-size: 16px;
+}
+
+.room-options {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+}
+
+.room-option {
+    display: flex;
+    align-items: center;
+    margin: 5px 0;
+}
+
+.room-option input[type="radio"] {
+    margin-right: 10px;
 }
 
 .actions {
@@ -415,6 +430,17 @@ header .sign-in-btn {
     font-size: 13px;
     transition: background 0.3s;
     margin-top: 5px;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    margin: 5px 0;
+}
+
+.info-item.small-green {
+    font-size: 0.8rem;
+    color: green;
 }
 
 
