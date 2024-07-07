@@ -139,7 +139,7 @@ const Main = () => {
                                 }}
                             />
                         </div>
-                        <p>Japan</p>
+                        <p>China</p>
                     </div>
                     <div className="countryItem" onClick={() => handleImageClick('Turkey')}>
                         <div className="countryImageContainer">
