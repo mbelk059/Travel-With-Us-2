@@ -80,8 +80,16 @@ const Main = () => {
         navigate(`/${country.toLowerCase()}`); // Navigate to the country route dynamically
     };
 
+    const scrollTargetStyle = {
+        scrollMarginTop: '160px',
+    };
+
+    const scrollTargetStyle2 = {
+        scrollMarginTop: '100px',
+    };
+
     return (
-        <section id="discover" className='main container section'>
+        <section id="discover" className='main container section' style={scrollTargetStyle}>
             <div className="infoSection">
                 <h2 className="infoHeader">Plan, Book, Travel—It's That Simple</h2>
                 <div className="infoContent" data-aos="fade-up">
@@ -262,7 +270,7 @@ const Main = () => {
                 </div>
             </div>
 
-            <div id="packages" className="packageSection">
+            <div id="packages" className="packageSection" style={scrollTargetStyle2}>
                 <h2 className="infoHeader">Explore Our Travel Packages</h2>
                 <div className="packageGrid">
                     {travelPackages.map((pkg) => (
@@ -281,11 +289,11 @@ const Main = () => {
                 </div>
             </div>
             
-            <div id="packages" className="packageSection">
+            <div className="packageSection">
                 <h2 className="infoHeader">About</h2>
             </div>
 
-            <div id="about" className="aboutSection">
+            <div id="about" className="aboutSection" style={scrollTargetStyle}>
                 <div className="aboutContent">
                     <div className="aboutText">
                         <h2>Travel With Us: Your Gateway to Unforgettable Journeys</h2>

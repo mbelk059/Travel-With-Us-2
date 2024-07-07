@@ -147,10 +147,6 @@
     transform: scale(1.1); /* Example of scale animation when liked */
 }
 
-.travelPackagesSection {
-    margin-top: 50px;
-}
-
 .travelPackageGrid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
