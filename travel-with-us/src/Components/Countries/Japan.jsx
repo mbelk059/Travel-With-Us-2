@@ -118,17 +118,23 @@ const Japan = () => {
                         {[
                             { name: 'Tori H.', review: "Tokyo's vibrant energy and neon-lit streets were a sensory delight. The blend of modern technology and ancient temples left a lasting impression.", stars: '★★★★★', time: '20 minutes ago', img: tori },
                             { name: 'Nana B.', review: "Kyoto's serene temples and traditional tea ceremonies offered a peaceful retreat into Japan's rich cultural heritage.", stars: '★★★★☆', time: '58 minutes ago', img: nano },
-                            { name: 'Marco F.', review: "Osaka's lively food scene and friendly locals made exploring the city a culinary adventure. The historic castles and bustling markets were highlights of our ", stars: '★★★★★', time: '5 hours ago', img: marco }
+                            { name: 'Marco F.', review: "Osaka's lively food scene and friendly locals made exploring the city a culinary adventure. The historic castles and bustling markets were highlights of our trip.", stars: '★★★★★', time: '5 hours ago', img: marco }
                         ].map((review, index) => (
                             <div className="review-card" key={index}>
-                                <h3><img src={review.img} alt={review.name} />{review.name}</h3>
-                                <p>{review.review}</p>
-                                <div className="stars">{review.stars}</div>
-                                <div className="time">{review.time}</div>
+                                <div className="review-header">
+                                    <img src={review.img} alt={review.name} className="avatar" />
+                                    <h3 className="review-title">{review.name}</h3>
+                                </div>
+                                <p className="review-text">{review.review}</p>
+                                <div className="review-footer">
+                                    <div className="stars">{review.stars}</div>
+                                    <div className="time">{review.time}</div>
+                                </div>
                             </div>
                         ))}
                     </div>
-                </section>
+</section>
+
             </main>
 
             <footer className='footer'>
@@ -163,6 +169,8 @@ const Japan = () => {
                     </div>
                 </div>
             </footer>
+
+
         </>
     );
 };

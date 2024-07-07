@@ -4,6 +4,7 @@ body {
     margin: 0;
     padding: 0;
     background-color: #f8f8f8;
+    overflow-x: hidden; /* Prevent horizontal scrollbar */
 }
 
 a {
@@ -80,7 +81,8 @@ header .sign-in-btn {
 }
 
 .welcomeImage img {
-    width: 500px;
+    width: 100%;
+    max-width: 500px; /* Ensure the image does not overflow */
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
@@ -200,69 +202,119 @@ header .sign-in-btn {
     margin-top: 40px;
 }
 
+.sectionTitle {
+    text-align: left;
+    margin-bottom: 20px;
+    color: black;
+}
+
 .review-cards-container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: left;
-    gap: 1rem;
-    width: 1500px;
+    justify-content: space-around;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .review-card {
     background-color: white;
-    border-radius: 10px;
+    border-radius: 12px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     width: 100%;
-    max-width: 400px;
+    max-width: 360px;
     padding: 20px;
-    margin-bottom: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    transition: transform 0.2s ease-in-out;
 }
 
-.review-card h3 {
-    font-size: 1.2em;
-    margin-bottom: 10px;
+.review-card:hover {
+    transform: translateY(-5px);
+}
+
+.review-header {
     display: flex;
     align-items: center;
+    margin-bottom: 10px;
 }
 
-.review-card img {
+.avatar {
     width: 40px;
     height: 40px;
     border-radius: 50%;
     margin-right: 10px;
 }
 
-.review-card p {
-    color: #555;
-    margin-bottom: 10px;
+.review-title {
+    font-size: 1.1em;
+    color: black;
 }
 
-.review-card .stars {
+.review-text {
+    color: #666;
+    line-height: 1.4;
+    margin-bottom: 15px;
+}
+
+.stars {
     color: #FFD700;
-    margin-bottom: 10px;
+    font-size: 1.2em;
 }
 
-.review-card .time {
+.time {
     color: #999;
     font-size: 0.9em;
 }
 
 
-@media screen and (min-width: 768px) {
-    .aboutContent {
-        flex-direction: row;
-    }
+/* Footer Styles */
+.footer {
+    border-top: 1px solid #ccc; 
+}
 
-    .aboutText, .aboutImage {
-        flex: 1;
-    }
+.footerContent {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
 
-    .aboutText {
-        padding-right: 2rem;
-    }
+.footerSection {
+    flex: 1;
+    min-width: 150px;
+    padding: 1rem;
+}
+
+.footerSection h4 {
+    font-size: 1.1rem;
+    color: var(--PrimaryColour);
+    margin-bottom: 1rem;
+}
+
+.footerSection ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footerSection li {
+    margin-bottom: 0.5rem;
+    font-size: 0.8rem;
+    color: var(--textColour);
+}
+
+.footerSection li:hover{
+    cursor: pointer;
+}
+
+.footerSection p {
+    font-size: 1rem;
+    color: var(--blackColour);
+}
+
+.footerSection p:hover{
+    cursor: pointer;
 }
 
 /* Responsive adjustments */
