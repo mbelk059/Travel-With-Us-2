@@ -26,6 +26,19 @@ const Japan = () => {
     const [likedHotels, setLikedHotels] = useState([]);
     const [modalIsOpen, setModalIsOpen] = useState(false);
 
+    const [reviews, setReviews] = useState([
+        { name: 'Tori H.', review: "Tokyo's vibrant energy and neon-lit streets were a sensory delight. The blend of modern technology and ancient temples left a lasting impression.", stars: '★★★★★', time: '20 minutes ago', img: tori },
+        { name: 'Nana B.', review: "Kyoto's serene temples and traditional tea ceremonies offered a peaceful retreat into Japan's rich cultural heritage.", stars: '★★★★☆', time: '58 minutes ago', img: nano },
+        { name: 'Marco F.', review: "Osaka's lively food scene and friendly locals made exploring the city a culinary adventure. The historic castles and bustling markets were highlights of our trip.", stars: '★★★★★', time: '5 hours ago', img: marco }
+    ]);
+    const [newReview, setNewReview] = useState({
+        name: '',
+        review: '',
+        stars: '',
+        time: 'just now',
+        img: '' // You can add a default avatar or let users upload their own
+    });
+
     const handleLikeToggle = (attraction) => {
         if (likedAttractions.includes(attraction)) {
             setLikedAttractions(likedAttractions.filter((a) => a !== attraction));
@@ -48,6 +61,17 @@ const Japan = () => {
 
     const closeModal = () => {
         setModalIsOpen(false);
+    };
+
+    const handleReviewChange = (e) => {
+        const { name, value } = e.target;
+        setNewReview({ ...newReview, [name]: value });
+    };
+
+    const handleReviewSubmit = (e) => {
+        e.preventDefault();
+        setReviews([newReview, ...reviews]);
+        setNewReview({ name: '', review: '', stars: '', time: 'just now', img: '' });
     };
 
     return (
@@ -184,11 +208,7 @@ const Japan = () => {
                 <section className="reviews">
                     <h2 className="sectionTitle">Traveler reviews</h2>
                     <div className="review-cards-container">
-                        {[
-                            { name: 'Tori H.', review: "Tokyo's vibrant energy and neon-lit streets were a sensory delight. The blend of modern technology and ancient temples left a lasting impression.", stars: '★★★★★', time: '20 minutes ago', img: tori },
-                            { name: 'Nana B.', review: "Kyoto's serene temples and traditional tea ceremonies offered a peaceful retreat into Japan's rich cultural heritage.", stars: '★★★★☆', time: '58 minutes ago', img: nano },
-                            { name: 'Marco F.', review: "Osaka's lively food scene and friendly locals made exploring the city a culinary adventure. The historic castles and bustling markets were highlights of our trip.", stars: '★★★★★', time: '5 hours ago', img: marco }
-                        ].map((review, index) => (
+                        {reviews.map((review, index) => (
                             <div className="review-card" key={index}>
                                 <div className="review-header">
                                     <img src={review.img} alt={review.name} className="avatar" />
@@ -202,6 +222,42 @@ const Japan = () => {
                             </div>
                         ))}
                     </div>
+                    <form className="review-form" onSubmit={handleReviewSubmit}>
+                        <h3>Want to share your experiences? Leave a Review!</h3>
+                        <div className="form-group">
+                            <label htmlFor="name">Name</label>
+                            <input
+                                type="text"
+                                id="name"
+                                name="name"
+                                value={newReview.name}
+                                onChange={handleReviewChange}
+                                required
+                            />
+                        </div>
+                        <div className="form-group">
+                            <label htmlFor="review">Review</label>
+                            <textarea
+                                id="review"
+                                name="review"
+                                value={newReview.review}
+                                onChange={handleReviewChange}
+                                required
+                            ></textarea>
+                        </div>
+                        <div className="form-group">
+                            <label htmlFor="stars">Rating</label>
+                            <input
+                                type="text"
+                                id="stars"
+                                name="stars"
+                                value={newReview.stars}
+                                onChange={handleReviewChange}
+                                required
+                            />
+                        </div>
+                        <button type="submit" className="btnn btnn-primary">Submit Review</button>
+                    </form>
                 </section>
             </main>
 
