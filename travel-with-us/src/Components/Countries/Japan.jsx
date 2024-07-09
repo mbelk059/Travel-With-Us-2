@@ -308,25 +308,25 @@ const Japan = () => {
                     <div className='footerSection'>
                         <h4>{t('explore')}</h4>
                         <ul>
-                            <li><a href="#destinations">{t('destinations')}</a></li>
-                            <li><a href="#packages">{t('packages')}</a></li>
-                            <li><a href="#blog">{t('blog')}</a></li>
+                            <li>{t('destinations')}</li>
+                            <li>{t('packages')}</li>
+                            <li>{t('blog')}</li>
                         </ul>
                     </div>
                     <div className='footerSection'>
                         <h4>{t('help')}</h4>
                         <ul>
-                            <li><a href="#faq">{t('faq')}</a></li>
-                            <li><a href="#contact">{t('contactUs')}</a></li>
-                            <li><a href="#support">{t('supportCenter')}</a></li>
+                            <li>{t('faq')}</li>
+                            <li>{t('contactUs')}</li>
+                            <li>{t('supportCenter')}</li>
                         </ul>
                     </div>
                     <div className='footerSection'>
                         <h4>{t('about')}</h4>
                         <ul>
-                            <li><a href="#our-story">{t('ourStory')}</a></li>
-                            <li><a href="#team">{t('team')}</a></li>
-                            <li><a href="#careers">{t('careers')}</a></li>
+                            <li>{t('ourStory')}</li>
+                            <li>{t('team')}</li>
+                            <li>{t('careers')}</li>
                         </ul>
                     </div>
                 </div>

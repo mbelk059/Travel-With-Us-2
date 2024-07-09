@@ -128,7 +128,7 @@ const Main = () => {
                         </div>
                         <p>Japan</p>
                     </div>
-                    <div className="countryItem" onClick={() => handleImageClick('China')}>
+                    <div className="countryItem">
                         <div className="countryImageContainer">
                             <img src={chinaImage} alt="China" />
                             <FaHeart
@@ -141,7 +141,7 @@ const Main = () => {
                         </div>
                         <p>China</p>
                     </div>
-                    <div className="countryItem" onClick={() => handleImageClick('Turkey')}>
+                    <div className="countryItem">
                         <div className="countryImageContainer">
                             <img src={turkeyImage} alt="Turkey" />
                             <FaHeart
@@ -154,7 +154,7 @@ const Main = () => {
                         </div>
                         <p>Turkey</p>
                     </div>
-                    <div className="countryItem" onClick={() => handleImageClick('Netherlands')}>
+                    <div className="countryItem">
                         <div className="countryImageContainer">
                             <img src={netherlandsImage} alt="Netherlands" />
                             <FaHeart
@@ -167,7 +167,7 @@ const Main = () => {
                         </div>
                         <p>Netherlands</p>
                     </div>
-                    <div className="countryItem" onClick={() => handleImageClick('Algeria')}>
+                    <div className="countryItem">
                         <div className="countryImageContainer">
                             <img src={algeriaImage} alt="Algeria" />
                             <FaHeart
@@ -284,7 +284,15 @@ const Main = () => {
                                 <p>({pkg.reviews} Reviews)</p>
                                 <p>CAD ${pkg.price} per night <span className="discount">Save {pkg.discount}%</span></p>
                                 <p>Includes taxes and fees</p>
-                                <button className="bookButton" onClick={() => handleImageClick(pkg.country)}>Book Now</button>
+                                <button className='btn'>
+                                    <a 
+                                        href="https://www.tripadvisor.ca/" 
+                                        target="_blank" 
+                                        rel="noopener noreferrer"
+                                    >
+                                        Book Now
+                                    </a>
+                                    </button>
                             </div>
                         </div>
                     ))}

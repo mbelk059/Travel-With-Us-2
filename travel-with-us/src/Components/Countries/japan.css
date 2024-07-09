@@ -537,10 +537,6 @@ header .sign-in-btn {
     color: var(--textColour);
 }
 
-.footerSection li:hover{
-    cursor: pointer;
-}
-
 .footerSection p {
     font-size: 1rem;
     color: var(--blackColour);

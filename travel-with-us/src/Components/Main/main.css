@@ -343,17 +343,9 @@
   color: var(--textColour);
 }
 
-.footerSection li:hover {
-  cursor: pointer;
-}
-
 .footerSection p {
   font-size: 1rem;
   color: var(--blackColour);
-}
-
-.footerSection p:hover {
-  cursor: pointer;
 }
 
 /* Responsive adjustments */
