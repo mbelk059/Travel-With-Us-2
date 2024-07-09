@@ -226,7 +226,7 @@ const Main = () => {
                     </div>
                 </div>
 
-                <h3 className="sectionTitle">Most visited locations</h3>
+                <h3 className="sectionTitle">Visit popular locations</h3>
                 <div className="countryGrid">
                     <div className="countryItem">
                         <img src={spainImage} alt="Spain" />
