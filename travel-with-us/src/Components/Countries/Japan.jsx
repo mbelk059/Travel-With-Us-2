@@ -89,10 +89,22 @@ const Japan = () => {
     return (
         <>
             <main className="main-content">
-                <div className="language-switcher">
-                    <button onClick={() => changeLanguage('en')} aria-label="Switch to English">EN</button>
-                    <button onClick={() => changeLanguage('fr')} aria-label="Switch to French">FR</button>
-                </div>
+            <div className="language-switcher">
+                <button 
+                    onClick={() => changeLanguage('en')} 
+                    className={`language-button ${i18n.language === 'en' ? 'active' : ''}`}
+                    aria-label="Switch to English"
+                >
+                    EN
+                </button>
+                <button 
+                    onClick={() => changeLanguage('fr')} 
+                    className={`language-button ${i18n.language === 'fr' ? 'active' : ''}`}
+                    aria-label="Switch to French"
+                >
+                    FR
+                </button>
+            </div>
 
                 <div id="welcome" className="welcomeSection">
                     <div className="welcomeContent">
