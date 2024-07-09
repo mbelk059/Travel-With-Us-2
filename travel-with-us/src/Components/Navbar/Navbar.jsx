@@ -4,9 +4,12 @@ import { MdOutlineTravelExplore } from 'react-icons/md';
 import { AiFillCloseCircle } from 'react-icons/ai';
 import { TbGridDots } from 'react-icons/tb';
 import { HashLink as Link } from 'react-router-hash-link';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 const Navbar = () => {
     const [active, setActive] = useState('navBar');
+    const location = useLocation();
+    const navigate = useNavigate();
     
     // function to toggle navbar
     const showNav = () => {
@@ -18,12 +21,19 @@ const Navbar = () => {
         setActive('navBar');
     };
 
+    const handleNavigation = (hash) => {
+        removeNavbar();
+        if (location.pathname !== '/') {
+            navigate('/' + hash);
+        }
+    };
+
     return (
         <section className="navBarSection">
             <header className="header flex">
 
                 <div className="logoDiv">
-                    <Link to="#home" className="logo flex" onClick={removeNavbar}>
+                    <Link to="/#home" className="logo flex" onClick={() => handleNavigation('#home')}>
                         <h1><MdOutlineTravelExplore className="icon" />Travel With Us</h1>
                     </Link>
                 </div>
@@ -32,23 +42,23 @@ const Navbar = () => {
                     <ul className="navLists flex">
 
                         <li className="navItem">
-                            <Link to="#home" className="navLink" onClick={removeNavbar}>Home</Link>
+                            <Link to="/#home" className="navLink" onClick={() => handleNavigation('#home')}>Home</Link>
                         </li>
 
                         <li className="navItem">
-                            <Link to="#discover" className="navLink" onClick={removeNavbar}>Discover</Link>
+                            <Link to="/#discover" className="navLink" onClick={() => handleNavigation('#discover')}>Discover</Link>
                         </li>
 
                         <li className="navItem">
-                            <Link to="#packages" className="navLink" onClick={removeNavbar}>Packages</Link>
+                            <Link to="/#packages" className="navLink" onClick={() => handleNavigation('#packages')}>Packages</Link>
                         </li>
 
                         <li className="navItem">
-                            <Link to="#about" className="navLink" onClick={removeNavbar}>About</Link>
+                            <Link to="/#about" className="navLink" onClick={() => handleNavigation('#about')}>About</Link>
                         </li>
 
                         <button className='btn'>
-                            <Link to="#signin" onClick={removeNavbar}>Sign In</Link>
+                            <Link to="/#signin" onClick={() => handleNavigation('#signin')}>Sign In</Link>
                         </button>
                     </ul>
 
