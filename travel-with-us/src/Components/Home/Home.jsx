@@ -8,6 +8,7 @@ import { AiOutlineInstagram } from 'react-icons/ai';
 import { SiTripadvisor } from 'react-icons/si';
 import { BsListTask } from 'react-icons/bs';
 import { TbApps } from 'react-icons/tb';
+import { FaUsers } from 'react-icons/fa';
 import Aos from 'aos';
 import 'aos/dist/aos.css';
 
@@ -86,7 +87,14 @@ const Home = () => {
               <div className="numTravelers">
                 <label htmlFor="numTravelers">Number of travelers:</label>
                 <div className="input flex">
-                  <input type="number" id="numTravelers" min="1" max="10" placeholder="Number of travelers" />
+                  <input
+                    type="number"
+                    id="numTravelers"
+                    min="1"
+                    max="10"
+                    placeholder="Max 10"
+                  />
+                  <FaUsers className="icon" />
                 </div>
               </div>
               <button className="searchButton">Search</button>
