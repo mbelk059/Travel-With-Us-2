@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/Travel-With-Us-2/static/css/main.907bb9f7.css",
+    "main.css": "/Travel-With-Us-2/static/css/main.f2bc9c08.css",
     "main.js": "/Travel-With-Us-2/static/js/main.41bf6a2a.js",
     "static/media/hero.png": "/Travel-With-Us-2/static/media/hero.ab4ba3e53640b8212b39.png",
     "static/media/japann.png": "/Travel-With-Us-2/static/media/japann.689ce201bd3e079d4475.png",
@@ -39,11 +39,11 @@
     "static/media/marco.png": "/Travel-With-Us-2/static/media/marco.548c9d9d4f8a222eca1b.png",
     "static/media/tori.png": "/Travel-With-Us-2/static/media/tori.7265ff1cd8672b5f833e.png",
     "index.html": "/Travel-With-Us-2/index.html",
-    "main.907bb9f7.css.map": "/Travel-With-Us-2/static/css/main.907bb9f7.css.map",
+    "main.f2bc9c08.css.map": "/Travel-With-Us-2/static/css/main.f2bc9c08.css.map",
     "main.41bf6a2a.js.map": "/Travel-With-Us-2/static/js/main.41bf6a2a.js.map"
   },
   "entrypoints": [
-    "static/css/main.907bb9f7.css",
+    "static/css/main.f2bc9c08.css",
     "static/js/main.41bf6a2a.js"
   ]
 }
