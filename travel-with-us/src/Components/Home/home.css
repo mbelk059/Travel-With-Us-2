@@ -239,4 +239,70 @@
   .home .homeContent .cardDiv .searchOptions span {
     font-size: 17px;
   }
-}/*# sourceMappingURL=home.css.map */
+}
+
+.searchResults {
+  background: var(--whiteColour);
+  border-radius: 10px;
+  padding: 1rem;
+  margin-top: 1rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.searchResults h2 {
+  color: var(--blackColour);
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.searchResults ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.searchResults li {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #ccc;
+  color: var(--textColour);
+}
+
+.searchResults li:last-child {
+  border-bottom: none;
+}
+
+.searchResults img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 5px;
+  margin-top: 2.75rem;
+  margin-left: 0.75rem;
+}
+
+.searchResults p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--blackColour);
+  padding-left: 70px;
+}
+
+.closeButton {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  color: var(--blackColour);
+  cursor: pointer;
+  padding: 0.2rem 0.5rem;
+  border-radius: 50%;
+  transition: background-color 0.3s ease;
+}
+
+.closeButton:hover {
+  background-color: var(--inputColour);
+}
