@@ -537,6 +537,10 @@ header .sign-in-btn {
     color: var(--textColour);
 }
 
+.footerSection li:hover{
+    cursor: pointer;
+}
+
 .footerSection p {
     font-size: 1rem;
     color: var(--blackColour);
@@ -544,15 +548,6 @@ header .sign-in-btn {
 
 .footerSection p:hover{
     cursor: pointer;
-}
-
-// en and fr buttons
-.language-switcher {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  display: flex;
-  justify-content: flex-end;
 }
 
 .language-button {
