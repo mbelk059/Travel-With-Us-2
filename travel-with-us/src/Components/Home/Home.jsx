@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './home.css';
+import { Tooltip } from 'react-tooltip';
 
 import heroImage from '../../Assets/hero.png';
 import { GrLocation } from 'react-icons/gr';
@@ -114,15 +115,24 @@ const Home = () => {
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 list="destination-suggestions"
+                data-tooltip-id="destination-tooltip"
+                data-tooltip-content="Enter a city or country name"
               />
+              <Tooltip id="destination-tooltip" />
               <datalist id="destination-suggestions">
                 {destinations.map((dest, index) => (
                   <option key={index} value={dest.name}>{dest.country}</option>
                 ))}
               </datalist>
-              <GrLocation className="icon" />
+              <GrLocation 
+                className="icon" 
+                data-tooltip-id="location-tooltip"
+                data-tooltip-content="Use your current location"
+              />
+              <Tooltip id="location-tooltip" />
             </div>
           </div>
+
 
           <div className="dateInput">
             <label htmlFor="date">Select your date:</label>
@@ -206,16 +216,31 @@ const Home = () => {
           </div>
         )}
 
-        <div className="homeFooterIcons flex">
+      <div className="homeFooterIcons flex">
           <div className="rightIcons">
-            <FiFacebook className="icon" />
-            <AiOutlineInstagram className="icon" />
-            <SiTripadvisor className="icon" />
+            <FiFacebook 
+              className="icon" 
+              data-tooltip-id="facebook-tooltip"
+              data-tooltip-content="Follow us on Facebook"
+            />
+            <AiOutlineInstagram 
+              className="icon" 
+              data-tooltip-id="instagram-tooltip"
+              data-tooltip-content="Follow us on Instagram"
+            />
+            <SiTripadvisor 
+              className="icon" 
+              data-tooltip-id="tripadvisor-tooltip"
+              data-tooltip-content="Check our TripAdvisor reviews"
+            />
+            <Tooltip id="facebook-tooltip" />
+            <Tooltip id="instagram-tooltip" />
+            <Tooltip id="tripadvisor-tooltip" />
           </div>
 
           <div className="leftIcons">
-            <BsListTask className="icon" />
-            <TbApps className="icon" />
+            <BsListTask className="icon"/>
+            <TbApps className="icon"/>
           </div>
         </div>
       </div>

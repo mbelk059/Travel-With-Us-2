@@ -3,6 +3,8 @@ import { useNavigate } from 'react-router-dom';
 import Modal from 'react-modal';
 import './japan.css';
 import { useTranslation } from 'react-i18next';
+import { Tooltip } from 'react-tooltip';
+import 'react-tooltip/dist/react-tooltip.css';
 
 import japann from '../../Assets/japann.png';
 import excel from '../../Assets/excel.png';
@@ -90,21 +92,27 @@ const Japan = () => {
         <>
             <main className="main-content">
             <div className="language-switcher">
-                <button 
-                    onClick={() => changeLanguage('en')} 
-                    className={`language-button ${i18n.language === 'en' ? 'active' : ''}`}
-                    aria-label="Switch to English"
-                >
-                    EN
-                </button>
-                <button 
-                    onClick={() => changeLanguage('fr')} 
-                    className={`language-button ${i18n.language === 'fr' ? 'active' : ''}`}
-                    aria-label="Switch to French"
-                >
-                    FR
-                </button>
-            </div>
+                    <button 
+                        onClick={() => changeLanguage('en')} 
+                        className={`language-button ${i18n.language === 'en' ? 'active' : ''}`}
+                        aria-label="Switch to English"
+                        data-tooltip-id="en-lang-tooltip"
+                        data-tooltip-content={t('Switch to English')}
+                    >
+                        EN
+                    </button>
+                    <Tooltip id="en-lang-tooltip" />
+                    <button 
+                        onClick={() => changeLanguage('fr')} 
+                        className={`language-button ${i18n.language === 'fr' ? 'active' : ''}`}
+                        aria-label="Switch to French"
+                        data-tooltip-id="fr-lang-tooltip"
+                        data-tooltip-content={t('Switch to French')}
+                    >
+                        FR
+                    </button>
+                    <Tooltip id="fr-lang-tooltip" />
+                </div>
 
                 <div id="welcome" className="welcomeSection">
                     <div className="welcomeContent">
@@ -114,8 +122,22 @@ const Japan = () => {
                         <div className="welcomeText">
                             <h1>{t('welcomeTitle')}</h1>
                             <p>{t('welcomeText')}</p>
-                            <button className="btnn btnn-primary">{t('learnMore')}</button>
-                            <button className="btnn btnn-secondary">{t('exploreJapan')}</button>
+                            <button 
+                                className="btnn btnn-primary"
+                                data-tooltip-id="learn-more-tooltip"
+                                data-tooltip-content={t('Click to learn more about Japan!')}
+                            >
+                                {t('learnMore')}
+                            </button>
+                            <Tooltip id="learn-more-tooltip" />
+                            <button 
+                                className="btnn btnn-secondary"
+                                data-tooltip-id="explore-tooltip"
+                                data-tooltip-content={t('Click to explore Japan!')}
+                            >
+                                {t('exploreJapan')}
+                            </button>
+                            <Tooltip id="explore-tooltip" />
                         </div>
                     </div>
                 </div>
@@ -294,7 +316,15 @@ const Japan = () => {
                                 aria-required="true"
                             />
                         </div>
-                        <button type="submit" className="btnn btnn-primary">{t('submitReview')}</button>
+                        <button 
+                            type="submit" 
+                            className="btnn btnn-primary"
+                            data-tooltip-id="submit-review-tooltip"
+                            data-tooltip-content={t('Click to submit your review!')}
+                        >
+                            {t('submitReview')}
+                        </button>
+                        <Tooltip id="submit-review-tooltip" />
                     </form>
                 </section>
             </main>
