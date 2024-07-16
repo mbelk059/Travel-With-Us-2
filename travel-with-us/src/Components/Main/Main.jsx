@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './main.css';
+import { HashLink as Link } from 'react-router-hash-link';
 
 import chinaImage from '../../Assets/china.png';
 import algeriaImage from '../../Assets/algeria.png';
@@ -322,39 +323,37 @@ const Main = () => {
             </div>
 
             <footer className='footer'>
-                <div className='footerContent'>
-                    <div className='footerSection'>
-                        <h4>Travel With Us</h4>
-                        <p>Your trusted travel partner.</p>
-                    </div>
-                    <div className='footerSection'>
-                        <h4>Explore</h4>
-                        <ul>
-                            <li>Destinations</li>
-                            <li>Packages</li>
-                            <li>Blog</li>
-                        </ul>
-                    </div>
-                    <div className='footerSection'>
-                        <h4>Help</h4>
-                        <ul>
-                            <li>FAQ</li>
-                            <li>Contact Us</li>
-                            <li>Support Center</li>
-                        </ul>
-                    </div>
-                    <div className='footerSection'>
-                        <h4>About</h4>
-                        <ul>
-                            <li>Our Story</li>
-                            <li>Team</li>
-                            <li>Careers</li>
-                        </ul>
-                    </div>
+            <div className='footerContent'>
+                <div className='footerSection'>
+                    <h4>Travel With Us</h4>
+                    <p>Your trusted travel partner.</p>
                 </div>
-            </footer>
-
-
+                <div className='footerSection'>
+                    <h4>Explore</h4>
+                    <ul>
+                        <li><Link smooth to="#discover">Destinations</Link></li>
+                        <li><Link smooth to="#packages">Packages</Link></li>
+                        <li><Link smooth to="#about">Blog</Link></li>
+                    </ul>
+                </div>
+                <div className='footerSection'>
+                    <h4>Help</h4>
+                    <ul>
+                        <li><Link smooth to="#about">FAQ</Link></li>
+                        <li><Link smooth to="#about">Contact Us</Link></li>
+                        <li><Link smooth to="#about">Support Center</Link></li>
+                    </ul>
+                </div>
+                <div className='footerSection'>
+                    <h4>About</h4>
+                    <ul>
+                        <li><Link smooth to="#about">Our Story</Link></li>
+                        <li><Link smooth to="#about">Team</Link></li>
+                        <li><Link smooth to="#about">Careers</Link></li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
         </section>
     )
 }

@@ -5,6 +5,8 @@ import './japan.css';
 import { useTranslation } from 'react-i18next';
 import { Tooltip } from 'react-tooltip';
 import 'react-tooltip/dist/react-tooltip.css';
+import { HashLink as Link } from 'react-router-hash-link';
+import { FaStar } from 'react-icons/fa';
 
 import japann from '../../Assets/japann.png';
 import excel from '../../Assets/excel.png';
@@ -74,6 +76,12 @@ const Japan = () => {
         setNewReview({ ...newReview, [name]: value });
     };
 
+    const handleStarClick = (star) => {
+        // Create a string of stars based on the selected number
+        const stars = '★'.repeat(star);
+        setNewReview({ ...newReview, stars });
+    };
+
     const handleReviewSubmit = (e) => {
         e.preventDefault();
         setReviews([newReview, ...reviews]);
@@ -87,6 +95,25 @@ const Japan = () => {
     const changeLanguage = (lng) => {
         i18n.changeLanguage(lng);
     };
+
+    const StarRating = ({ starsSelected, onStarClick }) => {
+        const totalStars = 5;
+        const starArray = Array.from({ length: totalStars }, (_, index) => index + 1);
+    
+        return (
+            <div className="star-rating">
+                {starArray.map(star => (
+                    <FaStar
+                        key={star}
+                        className={star <= starsSelected ? 'star-filled' : 'star-hollow'}
+                        onClick={() => onStarClick(star)}
+                    />
+                ))}
+            </div>
+        );
+    };
+
+    
 
     return (
         <>
@@ -305,16 +332,8 @@ const Japan = () => {
                             ></textarea>
                         </div>
                         <div className="form-group">
-                            <label htmlFor="stars">{t('rating')}</label>
-                            <input
-                                type="text"
-                                id="stars"
-                                name="stars"
-                                value={newReview.stars}
-                                onChange={handleReviewChange}
-                                required
-                                aria-required="true"
-                            />
+                            <label>{t('rating')}</label>
+                            <StarRating starsSelected={newReview.stars.length} onStarClick={handleStarClick} />
                         </div>
                         <button 
                             type="submit" 
@@ -329,38 +348,39 @@ const Japan = () => {
                 </section>
             </main>
 
-            <footer className='footer' role="contentinfo">
-                <div className='footerContent'>
-                    <div className='footerSection'>
-                        <h4>{t('travelWithUs')}</h4>
-                        <p>{t('trustedPartner')}</p>
-                    </div>
-                    <div className='footerSection'>
-                        <h4>{t('explore')}</h4>
-                        <ul>
-                            <li>{t('destinations')}</li>
-                            <li>{t('packages')}</li>
-                            <li>{t('blog')}</li>
-                        </ul>
-                    </div>
-                    <div className='footerSection'>
-                        <h4>{t('help')}</h4>
-                        <ul>
-                            <li>{t('faq')}</li>
-                            <li>{t('contactUs')}</li>
-                            <li>{t('supportCenter')}</li>
-                        </ul>
-                    </div>
-                    <div className='footerSection'>
-                        <h4>{t('about')}</h4>
-                        <ul>
-                            <li>{t('ourStory')}</li>
-                            <li>{t('team')}</li>
-                            <li>{t('careers')}</li>
-                        </ul>
-                    </div>
+            <footer className='footer'>
+            <div className='footerContent'>
+                <div className='footerSection'>
+                    <h4>Travel With Us</h4>
+                    <p>Your trusted travel partner.</p>
                 </div>
-            </footer>
+                <div className='footerSection'>
+                    <h4>Explore</h4>
+                    <ul>
+                        <li><Link smooth to="#discover">Destinations</Link></li>
+                        <li><Link smooth to="#packages">Packages</Link></li>
+                        <li><Link smooth to="#about">Blog</Link></li>
+                    </ul>
+                </div>
+                <div className='footerSection'>
+                    <h4>Help</h4>
+                    <ul>
+                        <li><Link smooth to="#about">FAQ</Link></li>
+                        <li><Link smooth to="#about">Contact Us</Link></li>
+                        <li><Link smooth to="#about">Support Center</Link></li>
+                    </ul>
+                </div>
+                <div className='footerSection'>
+                    <h4>About</h4>
+                    <ul>
+                        <li><Link smooth to="#about">Our Story</Link></li>
+                        <li><Link smooth to="#about">Team</Link></li>
+                        <li><Link smooth to="#about">Careers</Link></li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+        
         </>
     );
 };

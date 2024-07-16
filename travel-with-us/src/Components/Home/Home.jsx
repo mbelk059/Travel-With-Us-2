@@ -218,30 +218,40 @@ const Home = () => {
 
       <div className="homeFooterIcons flex">
           <div className="rightIcons">
-            <FiFacebook 
-              className="icon" 
-              data-tooltip-id="facebook-tooltip"
-              data-tooltip-content="Follow us on Facebook"
-            />
-            <AiOutlineInstagram 
-              className="icon" 
+          <a
+            href="https://www.facebook.com/yourpage"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="iconLink"
+            data-tooltip-id="facebook-tooltip"
+            data-tooltip-content="Follow us on Facebook"
+          >
+              <FiFacebook className="icon" />
+          </a>
+          <a
+              href="https://www.instagram.com/yourpage"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="iconLink"
               data-tooltip-id="instagram-tooltip"
               data-tooltip-content="Follow us on Instagram"
-            />
-            <SiTripadvisor 
-              className="icon" 
+          >
+              <AiOutlineInstagram className="icon" />
+          </a>
+          <a
+              href="https://www.tripadvisor.com/yourpage"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="iconLink"
               data-tooltip-id="tripadvisor-tooltip"
               data-tooltip-content="Check our TripAdvisor reviews"
-            />
-            <Tooltip id="facebook-tooltip" />
-            <Tooltip id="instagram-tooltip" />
-            <Tooltip id="tripadvisor-tooltip" />
-          </div>
-
-          <div className="leftIcons">
-            <BsListTask className="icon"/>
-            <TbApps className="icon"/>
-          </div>
+          >
+              <SiTripadvisor className="icon" />
+          </a>
+          <Tooltip id="facebook-tooltip" />
+          <Tooltip id="instagram-tooltip" />
+          <Tooltip id="tripadvisor-tooltip" />
+        </div>
         </div>
       </div>
     </section>

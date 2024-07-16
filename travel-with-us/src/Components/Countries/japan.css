@@ -316,6 +316,23 @@ header .sign-in-btn {
     background-color: #ea5731;
 }
 
+.star-rating {
+    display: inline-block;
+    font-size: 24px;
+}
+
+.star-hollow {
+    color: var(--textColour); /* Color for hollow stars */
+    opacity: 40%;
+    cursor: pointer;
+}
+
+.star-filled {
+    color: gold; /* Color for filled stars */
+    cursor: pointer;
+}
+
+
 .starss {
     color: #FFD700;
     font-size: 1.8em;
