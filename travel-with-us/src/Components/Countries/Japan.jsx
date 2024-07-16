@@ -32,6 +32,22 @@ const Japan = () => {
     const [likedHotels, setLikedHotels] = useState([]);
     const [modalIsOpen, setModalIsOpen] = useState(false);
     const [bookingConfirmed, setBookingConfirmed] = useState(false); // State to track booking confirmation
+    const [checkInDate, setCheckInDate] = useState('');
+    const [checkOutDate, setCheckOutDate] = useState('');
+    const [today, setToday] = useState(new Date().toISOString().split('T')[0]);
+
+    const handleCheckInChange = (e) => {
+        const { value } = e.target;
+        setCheckInDate(value);
+        if (value > checkOutDate) {
+            setCheckOutDate(value); // Ensure checkOutDate is not before checkInDate
+        }
+    };
+
+    const handleCheckOutChange = (e) => {
+        const { value } = e.target;
+        setCheckOutDate(value);
+    };
 
 
     const [reviews, setReviews] = useState([
@@ -112,8 +128,6 @@ const Japan = () => {
             </div>
         );
     };
-
-    
 
     return (
         <>
@@ -244,7 +258,7 @@ const Japan = () => {
                     <div className="booking-info">
                         <div className="booking-option">
                             <label htmlFor="check-in">{t('checkIn')}: </label>
-                            <input type="date" id="check-in" />
+                            <input type="date" id="check-in" value={checkInDate} min={today} onChange={handleCheckInChange} />
                             <div className="additional-info">
                                 <div className="info-item"><FaCheck /> {t('reserveNowPayLater')}</div>
                                 <div className="info-item"><FaWifi /> {t('freeWifi')}</div>
@@ -255,7 +269,7 @@ const Japan = () => {
                         </div>
                         <div className="booking-option">
                             <label htmlFor="check-out">{t('checkOut')}: </label>
-                            <input type="date" id="check-out" />
+                            <input type="date" id="check-out" value={checkOutDate} min={checkInDate || today} onChange={handleCheckOutChange} />
                             <div className="additional-info">
                                 <h3>{t('roomOptions')}</h3>
                                 <div className="info-item"><FaUtensils /> {t('breakfastBuffet', { price: 25 })}</div>
