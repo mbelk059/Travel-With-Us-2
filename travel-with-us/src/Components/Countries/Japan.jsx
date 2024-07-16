@@ -89,7 +89,9 @@ const Japan = () => {
 
     const handleReviewChange = (e) => {
         const { name, value } = e.target;
-        setNewReview({ ...newReview, [name]: value });
+        if (value.length <= 300) { // Example max length, adjust as needed
+            setNewReview({ ...newReview, [name]: value });
+        }
     };
 
     const handleStarClick = (star) => {
@@ -100,8 +102,13 @@ const Japan = () => {
 
     const handleReviewSubmit = (e) => {
         e.preventDefault();
-        setReviews([newReview, ...reviews]);
-        setNewReview({ name: '', review: '', stars: '', time: 'just now', img: '' });
+        if (newReview.review.length <= 50) { // Example max length, adjust as needed
+            setReviews([newReview, ...reviews]);
+            setNewReview({ name: '', review: '', stars: '', time: 'just now', img: '' });
+        } else {
+            // Handle case where review exceeds character limit
+            alert('Maximum character limit exceeded.');
+        }
     };
 
     const handleBookingConfirm = () => {
@@ -341,9 +348,12 @@ const Japan = () => {
                                 name="review"
                                 value={newReview.review}
                                 onChange={handleReviewChange}
+                                maxLength={50}
                                 required
                                 aria-required="true"
+                                className={newReview.review.length >= 50 ? 'maxLengthReached' : ''}
                             ></textarea>
+                            <span className="charCount">{newReview.review.length}/50</span>
                         </div>
                         <div className="form-group">
                             <label>{t('rating')}</label>
